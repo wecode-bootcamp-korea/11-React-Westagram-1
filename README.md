@@ -1,10 +1,6 @@
 # 11-React-Westagram-1
 
----
-
 ## 팀원
-
----
 
 ### 11기 강예지
 
@@ -13,8 +9,6 @@
 ### 11기 송다슬
 
 ### 11기 유휘찬
-
----
 
 ## Process For Co-Work
 
@@ -28,7 +22,7 @@
 
 `git checkout feature/자기 이름`
 
-3. \*\*\*자기 브랜치에서만 작업하기(Master는 신성불가침의 영역이라고 합니다 하하)\*\*\*
+3. <i><b>자기 브랜치에서만 작업하기(Master는 신성불가침의 영역이라고 합니다 하하)</b></i>
 
 4. 작업 완료 후에 바로 add commit push를 하는 게 아니라 github을 확인한 후 master 브랜치가 update되었는지 확인하기(update가 되었다면 5번부터 읽기, 안되었다면 8번부터 읽기)
 
@@ -60,14 +54,14 @@
 
 ## 작업 시 주의 사항
 
-1. \*\*\*자기 브랜치에서만 작업하기\*\*\*
+1. <i><b>자기 브랜치에서만 작업하기</b></i>
 
-2. \*\*\*add 전에 master 브랜치 업데이트 여부 확인\*\*\*
+2. <i><b>add 전에 master 브랜치 업데이트 여부 확인</b></i>
 
-3. 커밋 메세지 가이드라인 지키기
+3. <i><b>커밋 메세지 가이드라인 지키기</b></i>
 
 `git commit -m "[자기 이름] ADD : 적용된 내용"`
 
 [참고) Commit Message Guidelines](https://www.notion.so/Commit-Message-Guidelines-8ca8fac8178943e78ddcfb48f47ba973)
 
-4. push 할 때 feature 브랜치에서만 작업하기
+4. <i><b>push 할 때 feature 브랜치에서 push하는 건지 확인하기</b></i>
