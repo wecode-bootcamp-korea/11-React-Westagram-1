@@ -1,32 +1,28 @@
-// [yeji] : box-sizing:border-box를 Nav바에다가 적었습니다.
-.Nav {
-	box-sizing: border-box;
-	width: 100%;
-	height: 54px;
+@import "../../styles/common.scss";
+
+%center-fixed {
 	display: flex;
 	justify-content: center;
 	position: fixed;
+}
+
+.Nav {
+	@extend %center-fixed;
+	width: 100%;
+	height: 54px;
 	top: 0;
 	margin: 0;
 	padding: 0;
-	background-color: white;
-	border-bottom: 1px solid #dbdbdb;
-
-	a {
-		height: 100%;
-		display: block;
-	}
+	background-color: $white;
+	border-bottom: 1px solid $border-grey;
 
 	nav {
+		@include centerSpaceBetween();
 		width: 935px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
 		.navLogo {
+			height: 29px;
 			display: flex;
 			align-items: center;
-
 			img {
 				width: 103px;
 				height: 29px;
@@ -36,16 +32,14 @@
 		.navSearch {
 			width: 215px;
 			height: 28px;
-
 			input {
 				width: inherit;
 				height: inherit;
 				text-align: start;
 				padding-left: 12px;
-				border: 1px solid #dbdbdb;
+				border: 1px solid $border-grey;
 				border-radius: 2px;
-				background-color: #fafafa;
-
+				background-color: $background-grey;
 				&::placeholder {
 					text-align: center;
 				}
@@ -55,21 +49,17 @@
 		.navIconList {
 			width: 198px;
 			height: 22px;
-
 			ul {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-			li {
-				height: 22px;
-				img {
-					width: 22px;
+				@include centerSpaceBetween();
+				li {
 					height: 22px;
-				}
-
-				.profileImg {
-					border-radius: 50%;
+					img {
+						width: 22px;
+						height: 22px;
+					}
+					.profileImg {
+						border-radius: 50%;
+					}
 				}
 			}
 		}
