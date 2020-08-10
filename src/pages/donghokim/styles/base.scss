@@ -1,0 +1,13 @@
+$text-black: rgb(38, 38, 38);
+$white: rgb(255, 255, 255);
+
+body,
+button,
+input,
+textarea {
+  color: rgba(38, 38, 38, 1);
+  line-height: 18px;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+}
