@@ -1,0 +1,106 @@
+@import "../../../styles/common.scss";
+@import "../../../styles/reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.Login {
+  height: 100vh;
+  margin: 0;
+  background-color: $background-grey;
+  @include center;
+
+  .loginContainer {
+    width: 350px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px 0px;
+    border: 1px solid $border-grey;
+    background-color: $white;
+    opacity: 1;
+
+    img {
+      width: 175px;
+      height: 51px;
+      margin: 22px auto 36px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .userInfoArea {
+      width: 268px;
+      height: 38px;
+      display: flex;
+      position: relative;
+      margin-bottom: 6px;
+
+      .write {
+        width: 100%;
+        height: 100%;
+        padding: 9px 0px 7px 8px;
+        border: 1px solid $border-grey;
+        border-radius: 3px;
+        background: $background-grey;
+
+        &::placeholder {
+          text-align: start;
+          font-size: 12px;
+          color: rgb(38, 38, 38);
+          opacity: 0.8;
+        }
+      }
+
+      .userPwArea {
+        margin-bottom: 14px;
+      }
+    }
+
+    .justButton {
+      width: 268px;
+      height: 30px;
+      border: none;
+      border-radius: 4px;
+      background-color: $blue;
+      opacity: 0.3;
+
+      .loginBtn {
+        width: 100%;
+        font-weight: 600;
+        color: white;
+      }
+    }
+
+    .buttonActive {
+      width: 268px;
+      height: 30px;
+      border: none;
+      border-radius: 4px;
+      background-color: $blue;
+      opacity: 1;
+
+      .loginBtn {
+        width: 100%;
+        font-weight: 600;
+        color: white;
+      }
+    }
+  }
+
+  a {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(0, 55, 107, 1);
+  }
+}
