@@ -16,10 +16,7 @@ class Login extends React.Component {
   };
 
   updateInputs = (inputName, inputValue) => {
-    this.setState(
-      (state) => ({ [inputName]: inputValue }),
-      this.changeButtonStatus
-    );
+    this.setState({ [inputName]: inputValue }, this.changeButtonStatus);
   };
 
   changeButtonStatus = () => {
