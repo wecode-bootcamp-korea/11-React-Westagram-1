@@ -7,7 +7,7 @@ class Aside extends React.Component {
       <div className="main_right">
         <div className="user_container">
           <div className="profile_image_container">
-            <Link href="#">
+            <Link to="#">
               <img
                 alt="profile_image"
                 src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/46667604_2237749169793267_945848138990616576_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=aXZvBJNSiT8AX8YgoHT&amp;oh=efddbe46865859e0a76405ec66625077&amp;oe=5F4DE0E9"
@@ -28,7 +28,7 @@ class Aside extends React.Component {
             <div className="recommended_user">
               <div className="user_container">
                 <div className="profile_image_container">
-                  <Link href="#">
+                  <Link to="#">
                     <img
                       alt=" profile_image"
                       src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68686926_369409437318048_4482937965638582272_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=77HqimOvT_MAX9I9ZRY&oh=5d2a59befa9a563e1a11cfadf0f4694c&oe=5F4E5614"
@@ -47,7 +47,7 @@ class Aside extends React.Component {
             <div className="recommended_user">
               <div className="user_container">
                 <div className="profile_image_container">
-                  <Link href="#">
+                  <Link to="#">
                     <img
                       alt=" profile_image"
                       src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68686926_369409437318048_4482937965638582272_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=77HqimOvT_MAX9I9ZRY&oh=5d2a59befa9a563e1a11cfadf0f4694c&oe=5F4E5614"
@@ -66,7 +66,7 @@ class Aside extends React.Component {
             <div className="recommended_user">
               <div className="user_container">
                 <div className="profile_image_container">
-                  <Link href="#">
+                  <Link to="#">
                     <img
                       alt=" profile_image"
                       src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68686926_369409437318048_4482937965638582272_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=77HqimOvT_MAX9I9ZRY&oh=5d2a59befa9a563e1a11cfadf0f4694c&oe=5F4E5614"
@@ -85,7 +85,7 @@ class Aside extends React.Component {
             <div className="recommended_user">
               <div className="user_container">
                 <div className="profile_image_container">
-                  <Link href="#">
+                  <Link to="#">
                     <img
                       alt=" profile_image"
                       src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68686926_369409437318048_4482937965638582272_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=77HqimOvT_MAX9I9ZRY&oh=5d2a59befa9a563e1a11cfadf0f4694c&oe=5F4E5614"
@@ -104,7 +104,7 @@ class Aside extends React.Component {
             <div className="recommended_user">
               <div className="user_container">
                 <div className="profile_image_container">
-                  <Link href="#">
+                  <Link to="#">
                     <img
                       alt=" profile_image"
                       src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/68686926_369409437318048_4482937965638582272_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=77HqimOvT_MAX9I9ZRY&oh=5d2a59befa9a563e1a11cfadf0f4694c&oe=5F4E5614"
@@ -127,7 +127,7 @@ class Aside extends React.Component {
             <ul>
               <li>
                 <Link
-                  href="https://about.instagram.com/"
+                  to="https://about.instagram.com/"
                   rel="nofollow noopener noreferrer"
                   target="_blank"
                 >
@@ -135,31 +135,31 @@ class Aside extends React.Component {
                 </Link>
               </li>
               <li>
-                <Link href="https://help.instagram.com/">도움말</Link>
+                <Link to="https://help.instagram.com/">도움말</Link>
               </li>
               <li>
-                <Link href="https://about.instagram.com/blog/">홍보 센터</Link>
+                <Link to="https://about.instagram.com/blog/">홍보 센터</Link>
               </li>
               <li>
-                <Link href="/developer/">API</Link>
+                <Link to="/developer/">API</Link>
               </li>
               <li>
-                <Link href="/about/jobs/">채용 정보</Link>
+                <Link to="/about/jobs/">채용 정보</Link>
               </li>
               <li>
-                <Link href="/legal/privacy/">개인정보처리방침</Link>
+                <Link to="/legal/privacy/">개인정보처리방침</Link>
               </li>
               <li>
-                <Link href="/legal/terms/">약관</Link>
+                <Link to="/legal/terms/">약관</Link>
               </li>
               <li>
-                <Link href="/explore/locations/">위치</Link>
+                <Link to="/explore/locations/">위치</Link>
               </li>
               <li>
-                <Link href="/directory/profiles/">인기 계정</Link>
+                <Link to="/directory/profiles/">인기 계정</Link>
               </li>
               <li>
-                <Link href="/directory/hashtags/">해시태그</Link>
+                <Link to="/directory/hashtags/">해시태그</Link>
               </li>
               <li>
                 <span className="language_option">

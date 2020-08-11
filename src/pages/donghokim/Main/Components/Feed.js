@@ -30,9 +30,7 @@ class Feed extends React.Component {
 
   updateInputs = ({ target: { value } }) => {
     if (value !== "\n") {
-      this.setState({ commentInput: value }, () => {
-        this.changeButtonStatus();
-      });
+      this.setState({ commentInput: value }, this.changeButtonStatus);
     }
   };
 
@@ -63,7 +61,7 @@ class Feed extends React.Component {
           </div>
           <div className="user_info_container">
             <div className="author">
-              <Link href="#" className="author_link">
+              <Link to="#" className="author_link">
                 ligonier
               </Link>
             </div>
@@ -185,7 +183,7 @@ class Feed extends React.Component {
               placeholder="댓글 달기..."
               autoComplete="off"
               onKeyPress={this.onKeyPress}
-              onChange={(e) => this.updateInputs(e)}
+              onChange={this.updateInputs}
               value={this.state.commentInput}
             ></textarea>
             <button
