@@ -3,26 +3,22 @@
 .main__right {
   margin-top: 46px;
   display: block;
-}
-
-.main__right ul li {
-  margin-top: 12px;
-}
-
-.main__right .story,
-.recommend {
-  border: 1px solid $border-grey;
-}
-
-.author {
-  display: flex;
-  margin-left: 10px;
-}
-
-.author .account {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
+  ul li {
+    margin-top: 12px;
+  }
+  .story,
+  .recommend {
+    border: 1px solid $border-grey;
+  }
+  .author {
+    display: flex;
+    margin-left: 10px;
+    .account {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
 }
 
 .account .account__id {
@@ -40,6 +36,8 @@
   font-size: 14px;
 }
 
+//  dividing line
+
 .account__follow,
 .account__time {
   font-size: 14px;
@@ -52,16 +50,12 @@
   display: flex;
   justify-content: space-between;
   margin: 12px;
-}
-
-.story__title--grey,
-.recommend__title--grey {
-  color: $text-grey;
-  margin-top: -1px;
-}
-
-.recommend__title--grey {
-  font-weight: 600;
+  .story__title--grey,
+  .recommend__title--grey {
+    color: $text-grey;
+    margin-top: -1px;
+    font-weight: 600;
+  }
 }
 
 .seeAll {
@@ -87,19 +81,14 @@
   font-size: 16px;
   font-weight: lighter;
   margin-left: 11px;
-}
-
-.tag1,
-.tag2 {
-  font-size: smaller;
-}
-
-.tag1 {
-  margin-bottom: 8px;
-}
-
-.rights {
-  font-size: smaller;
-  margin-top: 20px;
-  color: $text-grey;
+  .tag1,
+  .tag2 {
+    font-size: smaller;
+    margin-bottom: 8px;
+  }
+  .rights {
+    font-size: smaller;
+    margin-top: 20px;
+    color: $text-grey;
+  }
 }

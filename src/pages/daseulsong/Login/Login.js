@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../../styles/reset.scss";
 import "../../../styles/common.scss";
+import "../Main/Main.scss";
 import "./Login.scss";
 import { Link } from "react-router-dom";
 

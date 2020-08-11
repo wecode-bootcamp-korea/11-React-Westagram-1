@@ -17,55 +17,53 @@ nav {
   display: flex;
   margin-left: 24px;
   font-size: 28px;
-}
-
-.logo li {
-  margin-right: 10px;
-}
-
-.logo img {
-  width: 104px;
-  height: 50px;
+  li {
+    margin-right: 10px;
+  }
+  img {
+    width: 104px;
+    height: 50px;
+  }
 }
 
 .search {
   position: relative;
+  .search__bar {
+    text-align: center;
+    padding: 8px 42px;
+    margin-top: 8px;
+  }
+  .search__glass {
+    position: absolute;
+    top: 16px;
+    right: 129px;
+    color: $text-grey;
+  }
 }
 
-.search__bar {
-  text-align: center;
-  padding: 8px 42px;
-  margin-top: 8px;
+ul {
+  .icons {
+    font-size: 28px;
+  }
 }
 
-.search__glass {
-  position: absolute;
-  top: 16px;
-  right: 129px;
-  color: $text-grey;
-}
-
-ul .icons {
-  font-size: 28px;
-}
-
-nav .icons {
-  display: flex;
-  margin-right: 85px;
-}
-
-nav .icons .icons__list {
-  display: flex;
-  margin-top: 8px;
+nav {
+  .icons {
+    display: flex;
+    margin-right: 85px;
+  }
+  .icons__list {
+    display: flex;
+    margin-top: 8px;
+  }
 }
 
 nav .icons li {
   margin-right: 20px;
-}
-
-nav .icons li img {
-  width: 24px;
-  height: 24px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .icon__list--account img {
