@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import mockComments from "../../data/mockComments";
 import CommentsContainer from "./CommentsContainer";
+
+const USER_NAME = "dongho_223";
 
 class Feed extends React.Component {
   state = {
@@ -9,35 +12,41 @@ class Feed extends React.Component {
     commentInput: "",
   };
 
-  onKeyUp = (e) => {
-    if (e.keyCode === 13) {
-      if (e.target.value) {
-        e.target.value = "";
-      } else {
-        console.log(e.target.value);
-        this.addComment(this.state.commentInput);
-      }
+  onKeyPress = ({ key }) => {
+    if (key === "Enter" && this.state.commentInput) {
+      this.addComment();
     }
-    this.changeButtonStatus(e.target.value);
   };
 
-  onClick = (e) => {
-    e.preventDefault();
-    console.log(e);
+  onClick = () => {
+    if (this.state.commentInput) {
+      this.addComment();
+    }
   };
 
-  updateInputs = (value) => {
-    this.setState({ commentInput: value }, this.changeButtonStatus);
+  changeButtonStatus = () => {
+    this.setState({ postButtonStatus: this.state.commentInput ? false : true });
   };
 
-  changeButtonStatus = (value) => {
-    this.setState({ postButtonStatus: value ? false : true });
+  updateInputs = ({ target: { value } }) => {
+    if (value !== "\n") {
+      this.setState({ commentInput: value }, () => {
+        this.changeButtonStatus();
+      });
+    }
   };
 
-  addComment = (text) => {
-    this.setState({
-      comments: [...this.state.comments, text],
-    });
+  addComment = () => {
+    this.setState(
+      {
+        comments: [
+          ...this.state.comments,
+          { nickname: USER_NAME, text: this.state.commentInput },
+        ],
+        commentInput: "",
+      },
+      this.changeButtonStatus
+    );
   };
 
   render() {
@@ -54,9 +63,9 @@ class Feed extends React.Component {
           </div>
           <div className="user_info_container">
             <div className="author">
-              <a href="#" className="author_link">
+              <Link href="#" className="author_link">
                 ligonier
-              </a>
+              </Link>
             </div>
             <div className="location">Ulsan, South Korea</div>
           </div>
@@ -175,7 +184,9 @@ class Feed extends React.Component {
               name="comment"
               placeholder="댓글 달기..."
               autoComplete="off"
-              onKeyUp={this.onKeyUp}
+              onKeyPress={this.onKeyPress}
+              onChange={(e) => this.updateInputs(e)}
+              value={this.state.commentInput}
             ></textarea>
             <button
               className="submit"

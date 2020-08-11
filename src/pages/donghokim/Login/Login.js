@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { isIdHasAtAndPasswordMinFive } from "../_utils/validationFunctions";
 import "./Login.scss";
 
@@ -131,12 +131,12 @@ class Login extends React.Component {
                         <span className="login_text">Facebook으로 로그인</span>
                       </button>
                     </div>
-                    <a
+                    <Link
                       className="find_password"
                       href="https://instagram.com/accounts/password/reset/"
                     >
                       비밀번호를 잊으셨나요?
-                    </a>
+                    </Link>
                   </form>
                 </div>
               </div>
@@ -144,16 +144,16 @@ class Login extends React.Component {
                 <div className="text_container">
                   <p className="signup_text">
                     "계정이 없으신가요? "
-                    <a href="https://instagram.com/accounts/emailsignup/">
+                    <Link href="https://instagram.com/accounts/emailsignup/">
                       가입하기
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
               <div className="download_container">
                 <p className="download_text">앱을 다운로드 하세요</p>
                 <div className="download_links">
-                  <a
+                  <Link
                     className="image_link"
                     href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"
                   >
@@ -161,8 +161,8 @@ class Login extends React.Component {
                       alt="App Store에서 이용 가능"
                       src="https://instagram.com/static/images/appstore-install-badges/badge_ios_korean-ko.png/4a5c9d62d51b.png"
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="image_link"
                     href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DB83B8986-2F09-4ADA-A7C4-6935A556139E%26utm_content%3Dlo%26utm_medium%3Dbadge"
                   >
@@ -170,7 +170,7 @@ class Login extends React.Component {
                       alt="Google Play에서 이용 가능"
                       src="https://instagram.com/static/images/appstore-install-badges/badge_android_korean-ko.png/f155b664a93b.png"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -182,40 +182,42 @@ class Login extends React.Component {
             <nav className="info_nav">
               <ul>
                 <li>
-                  <a
+                  <Link
                     href="https://about.instagram.com/"
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
                     소개
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://help.instagram.com/">도움말</a>
+                  <Link href="https://help.instagram.com/">도움말</Link>
                 </li>
                 <li>
-                  <a href="https://about.instagram.com/blog/">홍보 센터</a>
+                  <Link href="https://about.instagram.com/blog/">
+                    홍보 센터
+                  </Link>
                 </li>
                 <li>
-                  <a href="/developer/">API</a>
+                  <Link href="/developer/">API</Link>
                 </li>
                 <li>
-                  <a href="/about/jobs/">채용 정보</a>
+                  <Link href="/about/jobs/">채용 정보</Link>
                 </li>
                 <li>
-                  <a href="/legal/privacy/">개인정보처리방침</a>
+                  <Link href="/legal/privacy/">개인정보처리방침</Link>
                 </li>
                 <li>
-                  <a href="/legal/terms/">약관</a>
+                  <Link href="/legal/terms/">약관</Link>
                 </li>
                 <li>
-                  <a href="/explore/locations/">위치</a>
+                  <Link href="/explore/locations/">위치</Link>
                 </li>
                 <li>
-                  <a href="/directory/profiles/">인기 계정</a>
+                  <Link href="/directory/profiles/">인기 계정</Link>
                 </li>
                 <li>
-                  <a href="/directory/hashtags/">해시태그</a>
+                  <Link href="/directory/hashtags/">해시태그</Link>
                 </li>
                 <li>
                   <span className="language_option">
