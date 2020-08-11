@@ -1,0 +1,105 @@
+@import "../../Main/Main.scss";
+
+.main__right {
+  margin-top: 46px;
+  display: block;
+}
+
+.main__right ul li {
+  margin-top: 12px;
+}
+
+.main__right .story,
+.recommend {
+  border: 1px solid $border-grey;
+}
+
+.author {
+  display: flex;
+  margin-left: 10px;
+}
+
+.author .account {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.account .account__id {
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.account .account__name {
+  font-weight: lighter;
+  color: $text-grey;
+}
+
+.account .account__location {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.account__follow,
+.account__time {
+  font-size: 14px;
+  color: $text-grey;
+}
+
+.story__title,
+.recommend__title {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px;
+}
+
+.story__title--grey,
+.recommend__title--grey {
+  color: $text-grey;
+  margin-top: -1px;
+}
+
+.recommend__title--grey {
+  font-weight: 600;
+}
+
+.seeAll {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account__list .account {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.account__list li {
+  margin-right: 12px;
+}
+
+.followBtn {
+  color: $blue;
+  margin-top: 8px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: lighter;
+  margin-left: 11px;
+}
+
+.tag1,
+.tag2 {
+  font-size: smaller;
+}
+
+.tag1 {
+  margin-bottom: 8px;
+}
+
+.rights {
+  font-size: smaller;
+  margin-top: 20px;
+  color: $text-grey;
+}
