@@ -3,7 +3,6 @@ const validationFunctions = {
     return idValue && passwordValue;
   },
   isIdHasAtAndPasswordMinFive: function (idValue, passwordValue) {
-    console.log(idValue, passwordValue);
     return idValue.includes("@") && passwordValue.length > 4;
   },
 };

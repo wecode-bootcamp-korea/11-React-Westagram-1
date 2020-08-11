@@ -11,12 +11,11 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    console.log(this.props);
     this.props.history.push("/main-dongho");
   };
 
-  updateInputs = (inputName, inputValue) => {
-    this.setState({ [inputName]: inputValue }, this.changeButtonStatus);
+  updateInputs = ({ name, value }) => {
+    this.setState({ [name]: value }, this.changeButtonStatus);
   };
 
   changeButtonStatus = () => {
@@ -75,9 +74,7 @@ class Login extends React.Component {
                   <form
                     action="#"
                     className="login_form"
-                    onChange={({ target }) =>
-                      this.updateInputs(target.name, target.value)
-                    }
+                    onChange={({ target }) => this.updateInputs(target)}
                   >
                     <div className="input_container">
                       <label className="label_container">
@@ -130,7 +127,7 @@ class Login extends React.Component {
                     </div>
                     <Link
                       className="find_password"
-                      href="https://instagram.com/accounts/password/reset/"
+                      to="https://instagram.com/accounts/password/reset/"
                     >
                       비밀번호를 잊으셨나요?
                     </Link>
@@ -141,7 +138,7 @@ class Login extends React.Component {
                 <div className="text_container">
                   <p className="signup_text">
                     "계정이 없으신가요? "
-                    <Link href="https://instagram.com/accounts/emailsignup/">
+                    <Link to="https://instagram.com/accounts/emailsignup/">
                       가입하기
                     </Link>
                   </p>
@@ -152,7 +149,7 @@ class Login extends React.Component {
                 <div className="download_links">
                   <Link
                     className="image_link"
-                    href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"
+                    to="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"
                   >
                     <img
                       alt="App Store에서 이용 가능"
@@ -161,7 +158,7 @@ class Login extends React.Component {
                   </Link>
                   <Link
                     className="image_link"
-                    href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DB83B8986-2F09-4ADA-A7C4-6935A556139E%26utm_content%3Dlo%26utm_medium%3Dbadge"
+                    to="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DB83B8986-2F09-4ADA-A7C4-6935A556139E%26utm_content%3Dlo%26utm_medium%3Dbadge"
                   >
                     <img
                       alt="Google Play에서 이용 가능"
@@ -180,7 +177,7 @@ class Login extends React.Component {
               <ul>
                 <li>
                   <Link
-                    href="https://about.instagram.com/"
+                    to="https://about.instagram.com/"
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
@@ -188,33 +185,31 @@ class Login extends React.Component {
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://help.instagram.com/">도움말</Link>
+                  <Link to="https://help.instagram.com/">도움말</Link>
                 </li>
                 <li>
-                  <Link href="https://about.instagram.com/blog/">
-                    홍보 센터
-                  </Link>
+                  <Link to="https://about.instagram.com/blog/">홍보 센터</Link>
                 </li>
                 <li>
-                  <Link href="/developer/">API</Link>
+                  <Link to="/developer/">API</Link>
                 </li>
                 <li>
-                  <Link href="/about/jobs/">채용 정보</Link>
+                  <Link to="/about/jobs/">채용 정보</Link>
                 </li>
                 <li>
-                  <Link href="/legal/privacy/">개인정보처리방침</Link>
+                  <Link to="/legal/privacy/">개인정보처리방침</Link>
                 </li>
                 <li>
-                  <Link href="/legal/terms/">약관</Link>
+                  <Link to="/legal/terms/">약관</Link>
                 </li>
                 <li>
-                  <Link href="/explore/locations/">위치</Link>
+                  <Link to="/explore/locations/">위치</Link>
                 </li>
                 <li>
-                  <Link href="/directory/profiles/">인기 계정</Link>
+                  <Link to="/directory/profiles/">인기 계정</Link>
                 </li>
                 <li>
-                  <Link href="/directory/hashtags/">해시태그</Link>
+                  <Link to="/directory/hashtags/">해시태그</Link>
                 </li>
                 <li>
                   <span className="language_option">
