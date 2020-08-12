@@ -1,0 +1,11 @@
+@import "../../../styles/common.scss";
+
+.Section {
+	display: flex;
+	justify-content: center;
+	background-color: $background-grey;
+
+	Asides {
+		position: relative;
+	}
+}

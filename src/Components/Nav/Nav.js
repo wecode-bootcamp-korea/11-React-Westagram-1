@@ -35,7 +35,7 @@ class Nav extends React.Component {
                 <Link to="/main-yeji">
                   <svg
                     aria-label="Direct"
-                    class="_8-yf5 "
+                    className="_8-yf5 "
                     fill="#262626"
                     height="22"
                     viewBox="0 0 48 48"

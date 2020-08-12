@@ -1,0 +1,75 @@
+@import "../../../styles/common.scss";
+
+@mixin columnCenter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.Login {
+	.main {
+		@include center;
+		height: 100vh;
+		background-color: $background-grey;
+
+		.loginContainer {
+			width: 350px;
+			height: 380px;
+			padding-bottom: 10px;
+			border: 1px solid $border-grey;
+			background-color: $white;
+
+			.logo {
+				text-align: center;
+				img {
+					margin: 32px auto 12px;
+				}
+			}
+
+			.loginForm {
+				@include columnCenter;
+				width: 348px;
+				height: 250px;
+				position: relative;
+
+				.inputWrapper {
+					margin-bottom: 5px;
+					height: 36px;
+				}
+				input {
+					width: 268px;
+					height: inherit;
+					padding: 9px 0px 7px 8px;
+					border: 1px solid $border-grey;
+					border-radius: 5px;
+					background-color: $background-grey;
+				}
+
+				.loginBtn {
+					width: 268px;
+					height: 30px;
+					margin-top: 8px;
+					background-color: $blue;
+					border-radius: 5px;
+					color: $white;
+					font-weight: bold;
+					cursor: pointer;
+
+					&:disabled {
+						opacity: 0.3;
+						pointer-events: none;
+					}
+				}
+
+				.lostPassword {
+					position: absolute;
+					bottom: 0px;
+
+					a {
+						color: rgb(0, 55, 107);
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}

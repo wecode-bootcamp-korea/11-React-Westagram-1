@@ -1,13 +1,13 @@
 @import "../../styles/common.scss";
 
-%center-fixed {
+@mixin center-fixed {
 	display: flex;
 	justify-content: center;
 	position: fixed;
 }
 
 .Nav {
-	@extend %center-fixed;
+	@include center-fixed;
 	width: 100%;
 	height: 54px;
 	top: 0;
@@ -17,7 +17,7 @@
 	border-bottom: 1px solid $border-grey;
 
 	nav {
-		@include centerSpaceBetween();
+		@include centerSpaceBetween;
 		width: 935px;
 		.navLogo {
 			height: 29px;
@@ -50,7 +50,7 @@
 			width: 198px;
 			height: 22px;
 			ul {
-				@include centerSpaceBetween();
+				@include centerSpaceBetween;
 				li {
 					height: 22px;
 					img {
