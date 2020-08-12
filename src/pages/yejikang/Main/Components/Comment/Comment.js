@@ -1,4 +1,5 @@
 import React from "react";
+import "../Comment/comment.scss";
 
 class Comment extends React.Component {
   constructor() {
@@ -14,13 +15,11 @@ class Comment extends React.Component {
   };
   render() {
     return (
-      <div className="commentItem">
-        <span className="commentId">{this.props.id}</span>
+      <div className="Comment">
+        <span className="id">{this.props.id}</span>
         {this.props.text}
         <button
-          className={`commentHeartBtn ${
-            this.state.isLike ? "fillheart" : "heart"
-          }`}
+          className={`heartBtn ${this.state.isLike ? "fillheart" : "heart"}`}
           onClick={this.handleClick}
         ></button>
       </div>

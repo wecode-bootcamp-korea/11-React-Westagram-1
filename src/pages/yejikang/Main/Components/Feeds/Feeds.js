@@ -1,7 +1,7 @@
 import React from "react";
-import "./Feeds.scss";
-import Comment from "../Comment/Comment.js";
 import { Link } from "react-router-dom";
+import Comment from "../Comment/Comment.js";
+import "./Feeds.scss";
 
 class Feeds extends React.Component {
   constructor() {

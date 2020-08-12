@@ -1,6 +1,6 @@
 import React from "react";
-import "./Aside.scss";
 import { Link } from "react-router-dom";
+import "./Aside.scss";
 
 class Aside extends React.Component {
   render() {

@@ -21,8 +21,6 @@ class Login extends React.Component {
   };
 
   handleSummit = () => {
-    console.log(this.state); //과제 1 ) 아이디 패스워드 로그 출력
-
     fetch("http://10.58.4.11:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
