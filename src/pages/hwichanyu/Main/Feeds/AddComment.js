@@ -4,8 +4,8 @@ class AddComment extends Component {
   render() {
     return (
       <li>
-        <div>{this.props.userData.userId}</div>
-        <span>{this.props.userData.comment}</span>
+        <div>hwichan_</div>
+        <span>{this.props.comment}</span>
       </li>
     );
   }

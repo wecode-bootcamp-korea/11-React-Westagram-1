@@ -4,7 +4,7 @@ import "./Mainright.scss";
 class Mainright extends Component {
   render() {
     return (
-      <div className="mainRight">
+      <div className="MainRight">
         <div className="myInfo">
           <div className="myPicture">
             <img
@@ -13,7 +13,7 @@ class Mainright extends Component {
             />
           </div>
           <div className="profileLine">
-            <a href="#" className="userEngName">
+            <a href="/" className="userEngName">
               hwichan_
             </a>
             <div className="userKorName">유휘찬</div>
@@ -26,7 +26,7 @@ class Mainright extends Component {
           </div>
           <div className="recoList">
             <div className="eachRecolist">
-              <a href="#">
+              <a href="/">
                 <img
                   className="listImg"
                   alt="userProfile"
@@ -44,7 +44,7 @@ class Mainright extends Component {
           </div>
           <div className="recoList">
             <div className="eachRecolist">
-              <a href="#">
+              <a href="/">
                 <img
                   className="listImg"
                   alt="userProfile"
@@ -62,7 +62,7 @@ class Mainright extends Component {
           </div>
           <div className="recoList">
             <div className="eachRecolist">
-              <a href="#">
+              <a href="/">
                 <img
                   className="listImg"
                   alt="userProfile"
@@ -80,7 +80,7 @@ class Mainright extends Component {
           </div>
           <div className="recoList">
             <div className="eachRecolist">
-              <a href="#">
+              <a href="/">
                 <img
                   className="listImg"
                   alt="userProfile"
@@ -98,7 +98,7 @@ class Mainright extends Component {
           </div>
           <div className="recoList">
             <div className="eachRecolist">
-              <a href="#">
+              <a href="/">
                 <img
                   className="listImg"
                   alt="userProfile"
@@ -118,31 +118,21 @@ class Mainright extends Component {
         <div className="about">
           <ul>
             <li>소개</li>
-            <span>·</span>
             <li>도움말</li>
-            <span>·</span>
             <li>홍보 센터</li>
-            <span>·</span>
             <li>API</li>
-            <span>·</span>
             <li>채용 정보</li>
-            <span>·</span>
             <li>개인정보처리방침</li>
-            <span>·</span>
           </ul>
           <ul>
             <li>약관</li>
-            <span>·</span>
             <li>위치</li>
-            <span>·</span>
             <li>인기 계정</li>
-            <span>·</span>
-            <li>해시 태그</li>
-            <span>·</span>
-            <li>언어</li>
+            <li>해시태그</li>
+            <li className="lastAboutLi">언어</li>
           </ul>
           <ul className="version">
-            <li>© 2020 INSTAGRAM FROM FACEBOOK</li>
+            <li className="lastAboutLi">© 2020 INSTAGRAM FROM FACEBOOK</li>
           </ul>
         </div>
       </div>

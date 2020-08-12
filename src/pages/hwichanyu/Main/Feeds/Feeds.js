@@ -8,29 +8,54 @@ class Feeds extends Component {
     this.state = {
       value: "",
       list: [],
+      like: 100,
     };
   }
 
   getCommVal = (e) => {
-    console.log(this.state.value);
     this.setState({
       value: e.target.value,
     });
   };
 
   addComm = () => {
-    const userInfo = {
-      userId: "guest_",
-      comment: this.state.value,
-    };
+    if (this.state.value) {
+      this.setState({
+        list: this.state.list.concat([this.state.value]),
+        value: "",
+      });
+    }
+  };
+
+  addCommToEnter = (e) => {
+    if (e.key === "Enter" && this.state.value) {
+      this.addComm();
+      this.setState({
+        value: "",
+      });
+    }
+  };
+
+  addLikeVal = () => {
     this.setState({
-      list: [...this.state.list, userInfo],
+      like: this.state.like + 1,
     });
   };
 
+  // addComm = () => {
+  //   const userInfo = {
+  //     userId: "guest_",
+  //     comment: this.state.value,
+  //   };
+  //   this.setState({
+  //     list: [...this.state.list, userInfo],
+  //   });
+  // };
+  // 제가 해결한 과제가 아니고 동기분의 도음을 받았기에 이후에 공부할 수 있도록 주석처리해 두겠습니다.
+
   render() {
     return (
-      <div className="feedsFrame">
+      <div className="Feeds">
         <div className="feedsTop">
           <ul>
             <li>
@@ -77,6 +102,7 @@ class Feeds extends Component {
                 id="feedheart"
                 alt="feedIconBtn_heart"
                 src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                onClick={this.addLikeVal}
               />
               <img
                 alt="feedIconBtn_chat"
@@ -94,11 +120,11 @@ class Feeds extends Component {
             />
           </section>
           <section className="feedLike">
-            좋아요 <span>100</span>개
+            좋아요 <span>{this.state.like}</span>개
           </section>
           <div className="communication">
             <div className="userStory">
-              <a href="#">wecode_bootcamp</a>
+              <a href="/">wecode_bootcamp</a>
               <span>요놈이 귀엽게 쳐다보길래 올려봅니다</span>
               <span>
                 ... <span className="seeMore">더 보기</span>
@@ -114,9 +140,12 @@ class Feeds extends Component {
               <div>Hello_world</div>
               <span>어느별에서 왔니??~~</span>
             </li>
-            {this.state.list.map((comment) => {
-              return <AddComment userData={comment} />;
+            {this.state.list.map((comm, idx) => {
+              return <AddComment key={idx} comment={comm} />;
             })}
+            {/* {this.state.list.map((comment) => {
+              return <AddComment userData={comment} />;
+            })} */}
           </ul>
           <span className="day">8월 1일</span>
           <section className="addComment">
@@ -125,8 +154,13 @@ class Feeds extends Component {
                 type="text"
                 placeholder="댓글 달기..."
                 onChange={this.getCommVal}
+                onKeyPress={this.addCommToEnter}
+                value={this.state.value}
               />
-              <button id="submit" onClick={this.addComm}>
+              <button
+                className={this.state.value ? "submitActive" : "submit"}
+                onClick={this.addComm}
+              >
                 게시
               </button>
             </div>

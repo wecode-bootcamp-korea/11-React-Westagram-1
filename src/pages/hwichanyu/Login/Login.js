@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./Login.scss";
 
-class LoginHwichan extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,9 +11,23 @@ class LoginHwichan extends Component {
     };
   }
 
-  getValueAndGoToMain = () => {
-    console.log(this.state.id, this.state.pw);
-    this.props.history.push("/main-hwichan");
+  confirmValAndGoToMain = (e) => {
+    e.preventDefault();
+    if (this.state.id === "wecode00@gmail.com" && this.state.pw === "777777") {
+      this.props.history.push("/main-hwichan");
+      console.log("id : " + this.state.id, "/ pw : " + this.state.pw);
+    } else {
+      alert("입력하신 정보가 맞지 않습니다.");
+    }
+    fetch("http://10.58.3.218:8000/user/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then((res) => res.json()) // json body => js
+      .then((res) => console.log(res));
   };
 
   getValId = (e) => {
@@ -50,20 +64,19 @@ class LoginHwichan extends Component {
                 onChange={this.getValPw}
               />
             </div>
-            {console.log(this.state)}
             <button
               className={
                 this.state.id.includes("@") && this.state.pw.length >= 5
                   ? "buttonActive"
                   : "justButton"
               }
-              onClick={this.getValueAndGoToMain}
+              onClick={this.confirmValAndGoToMain}
             >
               <div className="loginBtn">로그인</div>
             </button>
           </form>
           <div>
-            <a href="#">비밀번호를 잊으셨나요?</a>
+            <a href="/">비밀번호를 잊으셨나요?</a>
           </div>
         </div>
       </div>
@@ -71,8 +84,4 @@ class LoginHwichan extends Component {
   }
 }
 
-export default withRouter(LoginHwichan);
-
-{
-  /* disabled={this.state.id ? "false" : "trues"} */
-}
+export default withRouter(Login);

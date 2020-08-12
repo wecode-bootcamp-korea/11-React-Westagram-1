@@ -3,7 +3,7 @@ import Feeds from "./Feeds/Feeds";
 import Mainright from "./Mainright/Mainright";
 import "./Main.scss";
 
-class Mymain extends Component {
+class Main extends Component {
   render() {
     return (
       <div className="Main">
@@ -19,4 +19,4 @@ class Mymain extends Component {
   }
 }
 
-export default Mymain;
+export default Main;
