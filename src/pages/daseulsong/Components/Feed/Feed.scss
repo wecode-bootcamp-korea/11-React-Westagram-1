@@ -2,7 +2,7 @@
 
 .feeds {
   width: 472px;
-  height: 722px;
+  height: 750px;
   margin-top: 46px;
   margin-right: 38px;
   background-color: $background-grey;
@@ -69,8 +69,8 @@
       li {
         margin-right: 12px;
         padding: 3px;
-        .icon__list--red {
-          color: #ee4956;
+        .icon__list--red path {
+          fill: #ee4956;
         }
       }
     }
@@ -101,6 +101,8 @@
   }
   li {
     margin-right: 8px;
+  }
+  .metadata__content--selected {
   }
   .seeMore {
     color: $dot-grey;
@@ -153,6 +155,7 @@
   vertical-align: top;
   vertical-align: bottom;
   .comment-box {
+    width: 420px;
     padding: 15px 0px 0px 15px;
     background-color: $background-grey;
     border: none;

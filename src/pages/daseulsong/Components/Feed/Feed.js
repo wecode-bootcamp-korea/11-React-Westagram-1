@@ -1,10 +1,39 @@
 import React, { Component } from "react";
 import "../../../../styles/common.scss";
 import "./Feed.scss";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 class Feed extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: "daseulsongme",
+      comment: "",
+      commentList: [],
+    };
+  }
+
+  handleChangeInput = (event) => {
+    this.setState({ comment: event.target.value });
+  };
+
+  handleSubmit = () => {
+    this.setState({
+      commentList: this.state.commentList.concat([
+        { id: this.state.id, comment: this.state.comment },
+      ]),
+    });
+  };
+
   render() {
+    console.log("commentList : ", this.state.commentList);
+    console.log("comment input :", this.state.comment);
     return (
       <div>
         <div className="feeds">
@@ -41,18 +70,18 @@ class Feed extends Component {
                 <div className="icon-list__left">
                   <li className="icon__list">
                     <span className="icon__list--red">
-                      <i className="fas fa-heart"></i>
+                      <FontAwesomeIcon icon={faHeart} />
                     </span>
                   </li>
                   <li className="icon__list">
-                    <i className="far fa-comment"></i>
+                    <FontAwesomeIcon icon={faComment} />
                   </li>
                   <li className="icon__list">
-                    <i className="far fa-paper-plane"></i>
+                    <FontAwesomeIcon icon={faPaperPlane} />
                   </li>
                 </div>
                 <li className="icon__list--right">
-                  <i className="far fa-bookmark"></i>
+                  <FontAwesomeIcon icon={faBookmark} />
                 </li>
               </ul>
               <div className="info__like">
@@ -67,7 +96,9 @@ class Feed extends Component {
                   <span className="metadata__userName">daseulsongme</span>
                 </li>
                 <li>
-                  <span>"Liebeskummer...💔 "</span>
+                  <span className="metadata__content--selected">
+                    "Liebeskummer..."
+                  </span>
                 </li>
                 <li>
                   <span className="seeMore">더 보기</span>
@@ -84,17 +115,38 @@ class Feed extends Component {
                   </span>
                 </div>
                 <span className="contentHeart">
-                  <i className="far fa-heart"></i>
+                  <FontAwesomeIcon icon={faHeart} />
                 </span>
               </div>
             </div>
+            <ul>
+              {this.state.commentList.map((commentTxt) => {
+                return (
+                  <li className="commentLi">
+                    <span className="userName">{this.state.id}</span>
+                    {commentTxt.comment}
+                  </li>
+                );
+              })}
+            </ul>
             <span className="uploadTime">54분 전</span>
             <section className="comment">
               <textarea
                 placeholder="댓글 달기..."
                 className="comment-box"
+                onChange={this.handleChangeInput}
               ></textarea>
-              <Link className="postBtn" to="/main-daseul">
+              <Link
+                className="postBtn"
+                to="/main-daseul"
+                onClick={
+                  !this.state.comment
+                    ? (e) => {
+                        e.preventDefault();
+                      }
+                    : this.handleSubmit
+                }
+              >
                 게시
               </Link>
             </section>

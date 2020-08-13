@@ -18,6 +18,15 @@ class Login extends Component {
       btnColor: "#b2dffc",
     };
   }
+
+  handleUsername = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
+  handlePassword = (event) => {
+    this.setState({ password: event.target.value });
+  };
+
   handleChangeInputId = (event) => {
     this.setState({ email: event.target.value });
   };
@@ -35,11 +44,20 @@ class Login extends Component {
   };
 
   handleSubmit = () => {
+    fetch("http://10.58.3.51:8000/accounts/login", {
+      method: "POST",
+      body: JSON.stringify({
+        phone_number: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json()) //JSON body => JS
+      .then((res) => console.log(res));
+
     // event.preventDefault(); -> 키이벤트에는 괜찮지만 클릭이벤트에는 걸 필요없다
     // const email = event.target.id.value; -> (target으로 인해)버튼에만 적용됨
     // const password = event.target.pw.value; -> (target으로 인해)버튼에만 적용됨
-    console.log("Email:", this.state.email);
-    console.log("Password:", this.state.password);
+
     // const { id } = this.state.email;
     // const { pw } = this.state.password;
     // const pwArr = pw.split();
@@ -53,6 +71,7 @@ class Login extends Component {
     // }
   };
 
+  /*
   idInputCheck = (event) => {
     this.setState({ email: event.target.value });
     if (event.target.value.includes("@")) {
@@ -80,7 +99,7 @@ class Login extends Component {
       this.setState({ btnColor: "#b2dffc" });
     }
   };
-
+*/
   // goToMain = (event) => {
   //   if (event.message === "valid user") {
   //     this.props.history.push("/signup");
@@ -114,8 +133,9 @@ class Login extends Component {
               id="email"
               name="id"
               onChange={
+                this.handleUsername
                 // this.handleChangeInputId(e, "email");
-                this.idInputCheck
+                // this.idInputCheck
               }
               // value={this.state.email}
             />
@@ -125,8 +145,9 @@ class Login extends Component {
               id="password"
               name="pw"
               onChange={
+                this.handlePassword
                 // this.handleChangeInputPw(e, "password");
-                this.pwInputCheck
+                // this.pwInputCheck
               }
               //value={this.state.password} -> 입력하면 자동으로 value 값이 저장됨
             />
@@ -142,8 +163,8 @@ class Login extends Component {
             // }
             onClick={() => {
               this.handleSubmit();
-              this.handleChangeBtnColor();
-              this.goToMain();
+              // this.handleChangeBtnColor();
+              // this.goToMain();
             }}
             onChange={this.onChange}
             // disabled={!this.state.value}

@@ -10,7 +10,8 @@ nav {
   justify-content: space-between;
   width: 945px;
   margin: 0 auto;
-  margin-top: 17px;
+  position: relative;
+  top: 5px;
 }
 
 .logo {
@@ -50,11 +51,11 @@ ul {
 nav {
   .icons {
     display: flex;
-    margin-right: 85px;
+    margin-right: 112px;
   }
   .icons__list {
     display: flex;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 }
 
