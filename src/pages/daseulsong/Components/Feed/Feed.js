@@ -24,11 +24,30 @@ class Feed extends Component {
   };
 
   handleSubmit = () => {
+    // this.setState({
+    //   commentList: [
+    //     ...this.state.commentList,
+    //     { id: "daseulsongme", text: this.state.comment },
+    //   ],
+
+    //   // this.state.commentList.concat([
+    //   //   { id: "daseulsongme", text: this.state.comment },
+    //   // ]),
+    // });
+    // console.log(this.state);
+
+    // // handleSubmit = () => {
+    // //   this.setState({
+    // //     commentList: this.state.commentList.concat(
+    // //       this.state.id + this.state.comment
+    // //     ),
+    // //   });
     this.setState({
       commentList: this.state.commentList.concat([
         { id: this.state.id, comment: this.state.comment },
       ]),
     });
+    //[{ id: daseulsongme, comment: 커맨트내용 }]
   };
 
   render() {

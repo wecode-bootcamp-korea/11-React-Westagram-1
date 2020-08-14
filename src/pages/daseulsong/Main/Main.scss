@@ -47,7 +47,8 @@ a {
 
 .main__container {
   display: flex;
-  width: 898px;
+  justify-content: center;
+  max-width: 898px;
   margin: 0 auto;
   height: 810px;
   background-color: $background-grey;

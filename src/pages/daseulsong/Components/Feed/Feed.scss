@@ -5,6 +5,7 @@
   height: 750px;
   margin-top: 46px;
   margin-right: 38px;
+  max-width: 600px;
   background-color: $background-grey;
   border: 1px solid $border-grey;
 }
@@ -69,7 +70,7 @@
       li {
         margin-right: 12px;
         padding: 3px;
-        .icon__list--red path {
+        .icon__list--red g {
           fill: #ee4956;
         }
       }

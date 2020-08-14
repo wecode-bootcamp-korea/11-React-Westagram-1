@@ -8,7 +8,7 @@ nav {
 .nav__container {
   display: flex;
   justify-content: space-between;
-  width: 945px;
+  max-width: 945px;
   margin: 0 auto;
   position: relative;
   top: 5px;
@@ -16,7 +16,7 @@ nav {
 
 .logo {
   display: flex;
-  margin-left: 24px;
+  margin-left: 72px;
   font-size: 28px;
   li {
     margin-right: 10px;
@@ -29,6 +29,9 @@ nav {
 
 .search {
   position: relative;
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
   .search__bar {
     text-align: center;
     padding: 8px 42px;
@@ -51,7 +54,7 @@ ul {
 nav {
   .icons {
     display: flex;
-    margin-right: 112px;
+    margin-right: 58px;
   }
   .icons__list {
     display: flex;
