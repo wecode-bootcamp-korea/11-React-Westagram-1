@@ -1,17 +1,17 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import { isIdHasAtAndPasswordMinFive } from "../_utils/validationFunctions";
+import DemoImages from "./Components/DemoImages/DemoImages";
+import InfoContainer from "../components/InfoContainer";
+import validation from "../_utils/validation";
 import "./Login.scss";
+
+const ipAddress = "http://10.58.3.254:8000";
 
 class Login extends React.Component {
   state = {
     username: "",
     password: "",
     buttonStatus: true,
-  };
-
-  goToMain = () => {
-    this.props.history.push("/main-dongho");
   };
 
   updateInputs = ({ name, value }) => {
@@ -27,40 +27,40 @@ class Login extends React.Component {
     });
   };
 
+  signUp = () => {
+    fetch(`${ipAddress}/User/SignUp`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.username,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
+
+  signin = () => {
+    fetch(`${ipAddress}/User/SignIn`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.username,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
+
+  goToMain = () => {
+    this.props.history.push("/main-dongho");
+  };
+
   render() {
     return (
       <div className="login_root">
         <main>
           <article>
-            <div className="demo_container">
-              <div className="image_frame">
-                <img
-                  alt="demo"
-                  className="demo_image"
-                  src="https://instagram.com/static/images/homepage/screenshot1-2x.jpg/9144d6673849.jpg"
-                />
-                <img
-                  alt="demo"
-                  className="demo_image"
-                  src="https://instagram.com/static/images/homepage/screenshot2-2x.jpg/177140221987.jpg"
-                />
-                <img
-                  alt="demo"
-                  className="demo_image"
-                  src="https://instagram.com/static/images/homepage/screenshot3-2x.jpg/ff2c097a681e.jpg"
-                />
-                <img
-                  alt="demo"
-                  className="demo_image"
-                  src="https://instagram.com/static/images/homepage/screenshot4-2x.jpg/b27a108592d8.jpg"
-                />
-                <img
-                  alt="demo"
-                  className="demo_image"
-                  src="https://instagram.com/static/images/homepage/screenshot5-2x.jpg/5e04169b9308.jpg"
-                />
-              </div>
-            </div>
+            <DemoImages />
             <div className="interaction_container">
               <div className="login_container">
                 <div className="logo">
@@ -109,7 +109,7 @@ class Login extends React.Component {
                     <div className="login_button">
                       <button
                         disabled={this.state.buttonStatus}
-                        onClick={this.goToMain}
+                        onClick={this.signin}
                       >
                         로그인
                       </button>
@@ -170,106 +170,8 @@ class Login extends React.Component {
             </div>
           </article>
         </main>
-
         <footer>
-          <div className="info_container">
-            <nav className="info_nav">
-              <ul>
-                <li>
-                  <Link
-                    to="https://about.instagram.com/"
-                    rel="nofollow noopener noreferrer"
-                    target="_blank"
-                  >
-                    소개
-                  </Link>
-                </li>
-                <li>
-                  <Link to="https://help.instagram.com/">도움말</Link>
-                </li>
-                <li>
-                  <Link to="https://about.instagram.com/blog/">홍보 센터</Link>
-                </li>
-                <li>
-                  <Link to="/developer/">API</Link>
-                </li>
-                <li>
-                  <Link to="/about/jobs/">채용 정보</Link>
-                </li>
-                <li>
-                  <Link to="/legal/privacy/">개인정보처리방침</Link>
-                </li>
-                <li>
-                  <Link to="/legal/terms/">약관</Link>
-                </li>
-                <li>
-                  <Link to="/explore/locations/">위치</Link>
-                </li>
-                <li>
-                  <Link to="/directory/profiles/">인기 계정</Link>
-                </li>
-                <li>
-                  <Link to="/directory/hashtags/">해시태그</Link>
-                </li>
-                <li>
-                  <span className="language_option">
-                    언어
-                    <select className="select_language">
-                      <option value="af">Afrikaans</option>
-                      <option value="cs">Čeština</option>
-                      <option value="da">Dansk</option>
-                      <option value="de">Deutsch</option>
-                      <option value="el">Ελληνικά</option>
-                      <option value="en">English</option>
-                      <option value="es">Español (España)</option>
-                      <option value="es-la">Español</option>
-                      <option value="fi">Suomi</option>
-                      <option value="fr">Français</option>
-                      <option value="id">Bahasa Indonesia</option>
-                      <option value="it">Italiano</option>
-                      <option value="ja">日本語</option>
-                      <option value="ko">한국어</option>
-                      <option value="ms">Bahasa Melayu</option>
-                      <option value="nb">Norsk</option>
-                      <option value="nl">Nederlands</option>
-                      <option value="pl">Polski</option>
-                      <option value="pt-br">Português (Brasil)</option>
-                      <option value="pt">Português (Portugal)</option>
-                      <option value="ru">Русский</option>
-                      <option value="sv">Svenska</option>
-                      <option value="th">ภาษาไทย</option>
-                      <option value="tl">Filipino</option>
-                      <option value="tr">Türkçe</option>
-                      <option value="zh-cn">中文(简体)</option>
-                      <option value="zh-tw">中文(台灣)</option>
-                      <option value="bn">বাংলা</option>
-                      <option value="gu">ગુજરાતી</option>
-                      <option value="hi">हिन्दी</option>
-                      <option value="hr">Hrvatski</option>
-                      <option value="hu">Magyar</option>
-                      <option value="kn">ಕನ್ನಡ</option>
-                      <option value="ml">മലയാളം</option>
-                      <option value="mr">मराठी</option>
-                      <option value="ne">नेपाली</option>
-                      <option value="pa">ਪੰਜਾਬੀ</option>
-                      <option value="si">සිංහල</option>
-                      <option value="sk">Slovenčina</option>
-                      <option value="ta">தமிழ்</option>
-                      <option value="te">తెలుగు</option>
-                      <option value="vi">Tiếng Việt</option>
-                      <option value="zh-hk">中文(香港)</option>
-                      <option value="bg">Български</option>
-                      <option value="fr-ca">Français (Canada)</option>
-                      <option value="ro">Română</option>
-                      <option value="sr">Српски</option>
-                      <option value="uk">Українська</option>
-                    </select>
-                  </span>
-                </li>
-              </ul>
-            </nav>
-            <span className="copyright">© 2020 Instagram from Facebook</span>
-          </div>
+          <InfoContainer />
         </footer>
       </div>
     );
