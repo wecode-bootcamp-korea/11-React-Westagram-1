@@ -1,5 +1,4 @@
 // dot env되는 지 확인되면 수정하겠음
-@import "../../../styles/reset.scss";
 @import "../../../styles/common.scss";
 @import "../styles/base.scss";
 
@@ -25,38 +24,14 @@
     height: 90%;
 
     article {
-      @include center();
+      @include center;
       max-width: 935px;
       width: 100%;
       height: 100%;
       margin: 30px auto 0;
       padding-bottom: 44px;
 
-      .demo_container {
-        flex-basis: 454px;
-        height: 618px;
-        margin-right: -15px;
-        margin-left: -35px;
-        background-position: 0 0;
-        background-size: 454px 618px;
-        background-image: url("https://instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png");
-        background-repeat: no-repeat;
-
-        .image_frame {
-          position: relative;
-          margin-top: 99px;
-          margin-left: 151px;
-
-          .demo_image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 427px;
-            width: 240px;
-            opacity: 1;
-          }
-        }
-      }
+      
     }
   }
 
@@ -93,7 +68,6 @@
 
           .input_container {
             @include centerSpaceBetween();
-            flex-direction: row;
             height: 36px;
             max-width: 268px;
             width: 100%;
@@ -144,9 +118,6 @@
             }
 
             .password_mode {
-              flex-direction: row;
-              align-items: stretch;
-              justify-content: flex-start;
               padding-right: 8px;
               margin-left: 8px;
 
@@ -188,10 +159,7 @@
           }
 
           .or {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            @include center;
             max-width: 268px;
             width: 100%;
             margin: 10px 40px 18px;
@@ -199,7 +167,7 @@
             .vertical_line {
               height: 1px;
               width: 39%;
-              background-color: #dbdbdb;
+              background-color: $border-grey;
             }
 
             .or_text {
@@ -213,7 +181,6 @@
           }
 
           .alternative_login {
-            display: block;
             margin: 8px 40px;
 
             .facebook_login {
