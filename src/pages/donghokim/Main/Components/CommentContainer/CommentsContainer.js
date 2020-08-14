@@ -1,5 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
+import "./CommentsContainer.scss";
 
 class CommentsContainer extends React.Component {
   render() {
