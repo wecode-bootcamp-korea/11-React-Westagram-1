@@ -14,13 +14,15 @@ class Comment extends React.Component {
     this.setState({ isLike: !this.state.isLike });
   };
   render() {
+    const { isLike } = this.state;
+    const { handleClick } = this;
     return (
       <div className="Comment">
         <span className="id">{this.props.id}</span>
         {this.props.text}
         <button
-          className={`heartBtn ${this.state.isLike ? "fillheart" : "heart"}`}
-          onClick={this.handleClick}
+          className={`heartBtn ${isLike ? "fillheart" : "heart"}`}
+          onClick={handleClick}
         ></button>
       </div>
     );

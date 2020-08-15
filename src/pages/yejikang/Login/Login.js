@@ -6,26 +6,28 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      pw: "",
-      id: "",
+      password: "",
+      email: "",
       disabled: true,
     };
   }
 
   goToMain = () => {
-    this.props.history.push("/main");
+    this.props.history.push("/main-yeji");
   };
 
   handleInputChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   handleSummit = () => {
+    const { email, password } = this.state;
     fetch("http://10.58.4.11:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
-        email: this.state.id,
-        password: this.state.pw,
+        email,
+        password,
       }),
     })
       .then((res) => res.json())
@@ -34,8 +36,9 @@ class Login extends React.Component {
   };
 
   render() {
-    const { id, pw } = this.state;
-    const enabled = id.includes("@") && pw.length >= 5;
+    const { email, password } = this.state;
+    const { goToMain, handleInputChange } = this;
+    const enabled = email.includes("@") && password.length >= 5;
 
     return (
       <div className="Login">
@@ -50,9 +53,9 @@ class Login extends React.Component {
                   type="text"
                   className="userId"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
-                  name="id"
-                  value={this.state.id}
-                  onChange={this.handleInputChange}
+                  name="email"
+                  value={email}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="inputWrapper">
@@ -60,14 +63,14 @@ class Login extends React.Component {
                   type="password"
                   className="userPw"
                   placeholder="비밀번호"
-                  name="pw"
-                  value={this.state.pw}
-                  onChange={this.handleInputChange}
+                  name="password"
+                  value={password}
+                  onChange={handleInputChange}
                 />
               </div>
               <button
                 className="loginBtn"
-                onClick={this.handleSummit}
+                onClick={goToMain}
                 disabled={!enabled}
               >
                 로그인

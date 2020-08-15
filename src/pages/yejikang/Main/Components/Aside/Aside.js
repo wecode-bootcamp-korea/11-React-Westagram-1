@@ -22,6 +22,7 @@ class Aside extends React.Component {
   };
 
   render() {
+    const { suggestionData } = this.state;
     return (
       <div className="Aside">
         <aside className="mainAside">
@@ -48,7 +49,7 @@ class Aside extends React.Component {
               </Link>
             </div>
             <>
-              {this.state.suggestionData.map((el) => {
+              {suggestionData.map((el) => {
                 return (
                   <SuggestionListItem
                     key={el.id}

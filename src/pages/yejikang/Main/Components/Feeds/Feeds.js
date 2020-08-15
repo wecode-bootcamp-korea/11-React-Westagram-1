@@ -61,14 +61,21 @@ class Feeds extends React.Component {
   };
 
   render() {
-    const buttonDisabled = !this.state.newText.trim("") ? true : false;
+    const { commentList, id, newText, isLike, storyInfo } = this.state;
+    const {
+      handleClicked,
+      handleEntered,
+      handleChange,
+      handleLikeClick,
+    } = this;
+    const buttonDisabled = !newText.trim("") ? true : false;
 
     return (
       <div className="Feeds">
         <section className="feedSection">
           <div className="storyContainer">
             <ul>
-              {this.state.storyInfo.map((el) => {
+              {storyInfo.map((el) => {
                 return <Storys key={el.id} id={el.id} image={el.image} />;
               })}
             </ul>
@@ -93,10 +100,8 @@ class Feeds extends React.Component {
             <div className="articleBottom">
               <div className="articleIconContainer">
                 <button
-                  className={`articleBtn ${
-                    this.state.isLike ? "fillheart" : "heart"
-                  }`}
-                  onClick={this.handleLikeClick}
+                  className={`articleBtn ${isLike ? "fillheart" : "heart"}`}
+                  onClick={handleLikeClick}
                 ></button>
                 <button className="articleBtn commentImg"></button>
                 <button className="articleBtn share">
@@ -127,26 +132,22 @@ class Feeds extends React.Component {
                 <div className="commentItem">
                   <span className="commentId">kim_mi_myo</span>집 가고 싶다.
                 </div>
-                {this.state.commentList.map((comment, index) => (
-                  <Comment
-                    key={index}
-                    id={this.state.id}
-                    text={comment}
-                  ></Comment>
+                {commentList.map((comment, index) => (
+                  <Comment key={index} id={id} text={comment} />
                 ))}
               </div>
             </div>
             <div className="articleTimeInfo">1시간전</div>
             <div className="addCommentContainer">
-              <div className="commentForm" onKeyDown={this.handleEntered}>
+              <div className="commentForm" onKeyDown={handleEntered}>
                 <input
                   className="inputComment"
                   type="text"
                   placeholder="댓글달기..."
-                  value={this.state.newText}
-                  onChange={this.handleChange}
+                  value={newText}
+                  onChange={handleChange}
                 />
-                <button onClick={this.handleClicked} disabled={buttonDisabled}>
+                <button onClick={handleClicked} disabled={buttonDisabled}>
                   게시
                 </button>
               </div>
