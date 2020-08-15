@@ -1,8 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getData } from "../../../RemoteDataSource.js";
+import SuggestionListItem from "../SuggestionListItem/SuggestionListItem";
 import "./Aside.scss";
 
 class Aside extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      suggestionData: [],
+    };
+  }
+
+  componentDidMount = () => {
+    getData("MockSuggestionData.json", (res) => {
+      this.setState({
+        suggestionData: res.data,
+      });
+    });
+  };
+
   render() {
     return (
       <div className="Aside">
@@ -29,102 +47,22 @@ class Aside extends React.Component {
                 모두 보기
               </Link>
             </div>
-            <div className="suggestionsList">
-              <div className="listItem">
-                <Link className="listPicture" to="/">
-                  <img
-                    alt="mynameis20님의 프로필"
-                    className="profileImg"
-                    src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/29403423_2018860301734687_8265582011880570880_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=m0CvUVd59rEAX-79ddt&amp;oh=593dd7d6cb1922837ce85c1741bd7b41&amp;oe=5F515228"
-                  />
-                </Link>
-                <div className="listDescription">
-                  <Link to="/" className="suggestionsId">
-                    mynameis20
-                  </Link>
-                  <div>
-                    <span className="comment">회원님을 팔로우합니다.</span>
-                  </div>
-                </div>
-                <button>팔로우</button>
-              </div>
-              <div className="listItem">
-                <Link className="listPicture" to="/">
-                  <img
-                    alt="mynameis20님의 프로필"
-                    className="profileImg"
-                    src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/29403423_2018860301734687_8265582011880570880_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=m0CvUVd59rEAX-79ddt&amp;oh=593dd7d6cb1922837ce85c1741bd7b41&amp;oe=5F515228"
-                  />
-                </Link>
-                <div className="listDescription">
-                  <Link to="/" className="suggestionsId">
-                    mynameis20
-                  </Link>
-                  <div>
-                    <span className="comment">회원님을 팔로우합니다.</span>
-                  </div>
-                </div>
-                <button>팔로우</button>
-              </div>
-              <div className="listItem">
-                <Link className="listPicture" to="/">
-                  <img
-                    alt="mynameis20님의 프로필"
-                    className="profileImg"
-                    src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/29403423_2018860301734687_8265582011880570880_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=m0CvUVd59rEAX-79ddt&amp;oh=593dd7d6cb1922837ce85c1741bd7b41&amp;oe=5F515228"
-                  />
-                </Link>
-                <div className="listDescription">
-                  <Link to="/" className="suggestionsId">
-                    mynameis20
-                  </Link>
-                  <div>
-                    <span className="comment">회원님을 팔로우합니다.</span>
-                  </div>
-                </div>
-                <button>팔로우</button>
-              </div>
-              <div className="listItem">
-                <Link className="listPicture" to="/">
-                  <img
-                    alt="mynameis20님의 프로필"
-                    className="profileImg"
-                    src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/29403423_2018860301734687_8265582011880570880_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=m0CvUVd59rEAX-79ddt&amp;oh=593dd7d6cb1922837ce85c1741bd7b41&amp;oe=5F515228"
-                  />
-                </Link>
-                <div className="listDescription">
-                  <Link to="/" className="suggestionsId">
-                    mynameis20
-                  </Link>
-                  <div>
-                    <span className="comment">회원님을 팔로우합니다.</span>
-                  </div>
-                </div>
-                <button>팔로우</button>
-              </div>
-              <div className="listItem">
-                <Link className="listPicture" to="/">
-                  <img
-                    alt="mynameis20님의 프로필"
-                    className="profileImg"
-                    src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/29403423_2018860301734687_8265582011880570880_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&amp;_nc_ohc=m0CvUVd59rEAX-79ddt&amp;oh=593dd7d6cb1922837ce85c1741bd7b41&amp;oe=5F515228"
-                  />
-                </Link>
-                <div className="listDescription">
-                  <Link to="/" className="suggestionsId">
-                    mynameis20
-                  </Link>
-                  <div>
-                    <span className="comment">회원님을 팔로우합니다.</span>
-                  </div>
-                </div>
-                <button>팔로우</button>
-              </div>
-            </div>
+            <>
+              {this.state.suggestionData.map((el) => {
+                return (
+                  <SuggestionListItem
+                    key={el.id}
+                    id={el.id}
+                    comment={el.comment}
+                    image={el.image}
+                  ></SuggestionListItem>
+                );
+              })}
+            </>
             <nav className="bottomNav">
               <ul>
                 <li>
-                  <Link to="/">소개</Link>
+                  <Link to="/">소개 </Link>
                 </li>
                 <li>
                   <Link to="/">．도움말</Link>
