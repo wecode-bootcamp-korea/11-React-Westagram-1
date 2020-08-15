@@ -4,6 +4,27 @@ import "./Sidebar.scss";
 import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      tagList: [],
+      tagName: [
+        "소개",
+        "도움말",
+        "홍보 센터",
+        "API",
+        "채용 정보",
+        "개인정보처리방침",
+        "약관",
+        "위치",
+        "인기 계정",
+        "해시태그",
+        "언어",
+      ],
+    };
+  }
+
   render() {
     return (
       <div>
@@ -118,27 +139,14 @@ class Sidebar extends Component {
               <div className="description">
                 <ul className="description__tag">
                   <li>
-                    <Link to="/main-daseul">소개</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">도움말</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">홍보 센터</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">API</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">채용 정보</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">개인정보처리방침</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">약관</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">위치</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">인기 계정</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">해시태그</Link>
-                    <span>&middot;</span>
-                    <Link to="/main-daseul">언어</Link>
+                    {this.state.tagName.map((_tagName) => {
+                      return (
+                        <>
+                          <Link to="/main-daseul">{_tagName}</Link>
+                          <span>&middot;</span>
+                        </>
+                      );
+                    })}
                   </li>
                 </ul>
                 <div className="rights">© 2020 INSTAGRAM FROM FACEBOOK</div>
