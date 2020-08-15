@@ -27,51 +27,10 @@ class Login extends Component {
     this.setState({ password: event.target.value });
   };
 
-  handleChangeInputId = (event) => {
-    this.setState({ email: event.target.value });
-  };
-  handleChangeInputPw = (event) => {
-    this.setState({ password: event.target.value });
-  };
-
-  /* handleChangeInputPw = (event) => {         --리팩토링: 위의 두 개의 이벤트를 한 이벤트로 처리하기
-    this.setState({ [event.target.id]: event.target.value }); -- id는 line 64, 73에 해당
-                        ㄴ자바스크립트 객체 접근자
-  };
-*/
-  handleChangeButton = (event) => {
+  handleChangeInput = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleSubmit = () => {
-    fetch("http://10.58.3.51:8000/accounts/login", {
-      method: "POST",
-      body: JSON.stringify({
-        phone_number: this.state.email,
-        password: this.state.password,
-      }),
-    })
-      .then((res) => res.json()) //JSON body => JS
-      .then((res) => console.log(res));
-
-    // event.preventDefault(); -> 키이벤트에는 괜찮지만 클릭이벤트에는 걸 필요없다
-    // const email = event.target.id.value; -> (target으로 인해)버튼에만 적용됨
-    // const password = event.target.pw.value; -> (target으로 인해)버튼에만 적용됨
-
-    // const { id } = this.state.email;
-    // const { pw } = this.state.password;
-    // const pwArr = pw.split();
-
-    // for(value of id.split('')){
-    //     if (value.includes('@') && pwArr.length >= 6) {
-    //       this.setState({ loginBtn.style.backgroundColor == 'darkblue'});
-    //     } else {
-    //       alert('id 값에는 "@"가 포함되어야 하고, password는 5글자 이상 입력 해야합니다.');
-    //     }
-    // }
-  };
-
-  /*
   idInputCheck = (event) => {
     this.setState({ email: event.target.value });
     if (event.target.value.includes("@")) {
@@ -99,15 +58,18 @@ class Login extends Component {
       this.setState({ btnColor: "#b2dffc" });
     }
   };
-*/
-  // goToMain = (event) => {
-  //   if (event.message === "valid user") {
-  //     this.props.history.push("/signup");
-  //   } else {
-  //     alert("The username you entered doesn't belong to an account. Please check your username and try again.");
-  //   }
-  //   this.props.history.push("/main");
-  // };
+
+  handleSubmit = () => {
+    fetch("http://10.58.3.51:8000/accounts/login", {
+      method: "POST",
+      body: JSON.stringify({
+        phone_number: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json()) //JSON body => JS
+      .then((res) => console.log(res));
+  };
 
   goToMain = () => {
     this.props.history.push("/main-daseul");
@@ -133,11 +95,8 @@ class Login extends Component {
               id="email"
               name="id"
               onChange={
-                this.handleUsername
-                // this.handleChangeInputId(e, "email");
-                // this.idInputCheck
+                (this.handleUsername, this.handleChangeInput, this.idInputCheck)
               }
-              // value={this.state.email}
             />
             <input
               type="password"
@@ -145,29 +104,20 @@ class Login extends Component {
               id="password"
               name="pw"
               onChange={
-                this.handlePassword
-                // this.handleChangeInputPw(e, "password");
-                // this.pwInputCheck
+                (this.handlePassword, this.handleChangeInput, this.pwInputCheck)
               }
-              //value={this.state.password} -> 입력하면 자동으로 value 값이 저장됨
             />
           </div>
           <button
             type="button"
             id="loginBtn"
             style={{ backgroundColor: this.state.btnColor }}
-            // className={
-            //   this.state.id.length >= 5 && this.state.pw.length >= 5
-            //     ? "button active"
-            //     : "button inactive"
-            // }
             onClick={() => {
               this.handleSubmit();
-              // this.handleChangeBtnColor();
-              // this.goToMain();
+              this.handleChangeBtnColor();
+              this.goToMain();
             }}
             onChange={this.onChange}
-            // disabled={!this.state.value}
           >
             로그인
           </button>
@@ -175,7 +125,6 @@ class Login extends Component {
         <div className="login__footer">
           <Link to="/login-daseul">비밀번호를 잊으셨나요?</Link>
         </div>
-        {/* </div> */}
       </section>
     );
   }
