@@ -116,7 +116,7 @@ class Sidebar extends Component {
             </li>
             <li>
               <div className="description">
-                <ul className="tag1">
+                <ul className="description__tag">
                   <li>
                     <Link to="/main-daseul">소개</Link>
                     <span>&middot;</span>
@@ -127,10 +127,7 @@ class Sidebar extends Component {
                     <Link to="/main-daseul">API</Link>
                     <span>&middot;</span>
                     <Link to="/main-daseul">채용 정보</Link>
-                  </li>
-                </ul>
-                <ul className="tag2">
-                  <li>
+                    <span>&middot;</span>
                     <Link to="/main-daseul">개인정보처리방침</Link>
                     <span>&middot;</span>
                     <Link to="/main-daseul">약관</Link>

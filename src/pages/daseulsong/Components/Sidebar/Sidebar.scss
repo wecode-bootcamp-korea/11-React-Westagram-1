@@ -1,6 +1,7 @@
 @import "../../Main/Main.scss";
 
 .main__right {
+  width: 296px;
   margin-top: 46px;
   display: block;
   ul li {
@@ -77,19 +78,24 @@
 }
 
 .description {
-  font-size: 16px;
+  width: 276px;
+  font-size: 13.5px;
   font-weight: lighter;
   margin-left: 11px;
-  .tag1,
-  .tag2 {
+  .description__tag {
     font-size: smaller;
     margin-bottom: 8px;
   }
   .rights {
     font-size: smaller;
+    font-weight: 400;
     margin-top: 20px;
     color: $text-grey;
   }
+}
+
+.description__tag li span {
+  margin: 0px 3px;
 }
 
 @media only screen and (max-width: 1000px) {
