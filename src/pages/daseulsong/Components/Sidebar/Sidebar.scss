@@ -47,8 +47,7 @@
 .story__title,
 .recommend__title {
   font-size: 16px;
-  display: flex;
-  justify-content: space-between;
+  @include startSpaceBetween;
   margin: 12px;
   .story__title--grey,
   .recommend__title--grey {
