@@ -10,7 +10,7 @@ import Sidebar from "../Components/Sidebar/Sidebar";
 class Main extends React.Component {
   render() {
     return (
-      <div>
+      <main>
         <Link to="/main-daseul"></Link>
         <Nav />
         <div className="main">
@@ -19,7 +19,7 @@ class Main extends React.Component {
             <Sidebar />
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
