@@ -133,18 +133,22 @@
   overflow-y: scroll;
   height: 50px;
   margin-left: 15px;
-  .infoComment {
+  .infoComment,
+  .commentLi {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    .contentHeart {
+    .contentHeart,
+    .commentLi__heart {
       font-size: 16px;
       margin-right: 13px;
     }
   }
-  .contentLeft {
+  .contentLeft,
+  .commentLi__left {
     display: flex;
-    .contentId {
+    .contentId,
+    .commentLi__userName {
       margin-right: 8px;
       font-weight: 600;
     }

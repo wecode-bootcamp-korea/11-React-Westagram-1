@@ -137,17 +137,26 @@ class Feed extends Component {
                   <FontAwesomeIcon icon={faHeart} />
                 </span>
               </div>
+              <ul>
+                {this.state.commentList.map((commentTxt) => {
+                  return (
+                    <li className="commentLi">
+                      <div className="commentLi__left">
+                        <span className="commentLi__userName">
+                          {this.state.id}
+                        </span>
+                        <span className="commentLi__content">
+                          {commentTxt.comment}
+                        </span>
+                      </div>
+                      <span className="commentLi__heart">
+                        <FontAwesomeIcon icon={faHeart} />
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-            <ul>
-              {this.state.commentList.map((commentTxt) => {
-                return (
-                  <li className="commentLi">
-                    <span className="userName">{this.state.id}</span>
-                    {commentTxt.comment}
-                  </li>
-                );
-              })}
-            </ul>
             <span className="uploadTime">54분 전</span>
             <section className="comment">
               <textarea
