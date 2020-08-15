@@ -12,10 +12,6 @@ class Login extends React.Component {
     };
   }
 
-  goToMain = () => {
-    this.props.history.push("/main-yeji");
-  };
-
   handleInputChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -35,6 +31,10 @@ class Login extends React.Component {
     // .then((res) => console.log(res)); //회원가입
   };
 
+  goToMain = () => {
+    this.props.history.push("/main-yeji");
+  };
+
   render() {
     const { email, password } = this.state;
     const { goToMain, handleInputChange } = this;
@@ -42,42 +42,32 @@ class Login extends React.Component {
 
     return (
       <div className="Login">
-        <div className="main">
-          <div className="loginContainer">
-            <div className="logo">
-              <img alt="instagram" src="/images/donghokim/logo_text.png" />
-            </div>
-            <div className="loginForm">
-              <div className="inputWrapper">
-                <input
-                  type="text"
-                  className="userId"
-                  placeholder="전화번호, 사용자 이름 또는 이메일"
-                  name="email"
-                  value={email}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="inputWrapper">
-                <input
-                  type="password"
-                  className="userPw"
-                  placeholder="비밀번호"
-                  name="password"
-                  value={password}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <button
-                className="loginBtn"
-                onClick={goToMain}
-                disabled={!enabled}
-              >
-                로그인
-              </button>
-              <div className="lostPassword">
-                <Link to="/">비밀번호를 잊으셨나요?</Link>
-              </div>
+        <div className="loginContainer">
+          <div className="logo">
+            <img alt="instagram" src="/images/donghokim/logo_text.png" />
+          </div>
+          <div className="loginForm">
+            <input
+              type="text"
+              className="userId"
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+              name="email"
+              value={email}
+              onChange={handleInputChange}
+            />
+            <input
+              type="password"
+              className="userPw"
+              placeholder="비밀번호"
+              name="password"
+              value={password}
+              onChange={handleInputChange}
+            />
+            <button className="loginBtn" onClick={goToMain} disabled={!enabled}>
+              로그인
+            </button>
+            <div className="lostPassword">
+              <Link to="/">비밀번호를 잊으셨나요?</Link>
             </div>
           </div>
         </div>
