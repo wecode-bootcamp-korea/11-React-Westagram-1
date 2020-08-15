@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Storys from "../Storys/Storys";
 import Comment from "../Comment/Comment.js";
 import "./Feeds.scss";
 
@@ -12,6 +13,24 @@ class Feeds extends React.Component {
       id: "yeji",
       newText: "",
       isLike: false,
+      storyInfo: [
+        { id: "yeji", image: "images/yejikang/me.jpg" },
+        {
+          id: "dlwlrma",
+          image:
+            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/28434316_190831908314778_1954023563480530944_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=QYc1csYH1MYAX_zMZPy&oh=a8eddaad3129cb7726abe1625f8a95c3&oe=5F60DD30",
+        },
+        {
+          id: "realisshoman",
+          image:
+            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/11428302_1110990302261622_637418776_a.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=izFiAOP8M9oAX92zYHh&oh=d9856cecbc61ccfde5f521f593164f91&oe=5F60FA6C",
+        },
+        {
+          id: "yerin",
+          image:
+            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/107568234_212276423313214_6993274077946280325_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=nokadWqNlr0AX9G9Wn4&oh=64b35329d43951c4aa27a034c96eda05&oe=5F608C6C",
+        },
+      ],
     };
   }
 
@@ -40,6 +59,7 @@ class Feeds extends React.Component {
       isLike: !this.state.isLike,
     });
   };
+
   render() {
     const buttonDisabled = !this.state.newText.trim("") ? true : false;
 
@@ -48,56 +68,9 @@ class Feeds extends React.Component {
         <section className="feedSection">
           <div className="storyContainer">
             <ul>
-              <li className="storyItem">
-                <Link to="/" className="storyCircle">
-                  <img
-                    alt="__님의 프로필 사진"
-                    className="profileImg"
-                    src="images/yejikang/me.jpg"
-                  />
-                </Link>
-                <span className="storyId">__hi</span>
-              </li>
-              <li className="storyItem">
-                <Link to="/" className="storyCircle">
-                  <img
-                    alt="__님의 프로필 사진"
-                    className="profileImg"
-                    src="images/yejikang/me.jpg"
-                  />
-                </Link>
-                <span className="storyId">__hi</span>
-              </li>
-              <li className="storyItem">
-                <Link to="/" className="storyCircle">
-                  <img
-                    alt="__님의 프로필 사진"
-                    className="profileImg"
-                    src="images/yejikang/me.jpg"
-                  />
-                </Link>
-                <span className="storyId">__hi</span>
-              </li>
-              <li className="storyItem">
-                <Link to="/" className="storyCircle">
-                  <img
-                    alt="__님의 프로필 사진"
-                    className="profileImg"
-                    src="images/yejikang/me.jpg"
-                  />
-                </Link>
-                <span className="storyId">__hi</span>
-              </li>
-              <li className="storyItem">
-                <Link to="/" className="storyCircle">
-                  <img
-                    alt="__님의 프로필 사진"
-                    className="profileImg"
-                    src="images/yejikang/me.jpg"
-                  />
-                </Link>
-                <span className="storyId">__hi</span>
-              </li>
+              {this.state.storyInfo.map((el) => {
+                return <Storys key={el.id} id={el.id} image={el.image} />;
+              })}
             </ul>
           </div>
           <article className="articleConatiner">
