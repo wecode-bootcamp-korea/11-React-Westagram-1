@@ -10,6 +10,19 @@ class Aside extends React.Component {
 
     this.state = {
       suggestionData: [],
+      helpData: [
+        { name: "소개", link: "/main-yeji" },
+        { name: "도움말", link: "/main-yeji" },
+        { name: "홍보센터", link: "/main-yeji" },
+        { name: "API", link: "/main-yeji" },
+        { name: "채용정보", link: "/main-yeji" },
+        { name: "개인정보처리방침", link: "/main-yeji" },
+        { name: "약관", link: "/main-yeji" },
+        { name: "위치", link: "/main-yeji" },
+        { name: "인기계정", link: "/main-yeji" },
+        { name: "해시태그", link: "/main-yeji" },
+        { name: "언어", link: "/main-yeji" },
+      ],
     };
   }
 
@@ -22,12 +35,12 @@ class Aside extends React.Component {
   };
 
   render() {
-    const { suggestionData } = this.state;
+    const { suggestionData, helpData } = this.state;
     return (
       <div className="Aside">
         <aside className="mainAside">
           <div className="profileContainer">
-            <Link to="/http://" className="userImg picture__link/">
+            <Link to="http://" className="userImg picture__link/">
               <img
                 className="profileImg"
                 alt="yejiiii_95의프로필사진"
@@ -48,7 +61,7 @@ class Aside extends React.Component {
                 모두 보기
               </Link>
             </div>
-            <>
+            <ul>
               {suggestionData.map((el) => {
                 return (
                   <SuggestionListItem
@@ -59,42 +72,16 @@ class Aside extends React.Component {
                   ></SuggestionListItem>
                 );
               })}
-            </>
+            </ul>
             <nav className="bottomNav">
               <ul>
-                <li>
-                  <Link to="/">소개 </Link>
-                </li>
-                <li>
-                  <Link to="/">．도움말</Link>
-                </li>
-                <li>
-                  <Link to="/">．홍보센터</Link>
-                </li>
-                <li>
-                  <Link to="/">．API</Link>
-                </li>
-                <li>
-                  <Link to="/">．채용 정보</Link>
-                </li>
-                <li>
-                  <Link to="/">．개인정보처리방침</Link>
-                </li>
-                <li>
-                  <Link to="/">．약관</Link>
-                </li>
-                <li>
-                  <Link to="/">．위치</Link>
-                </li>
-                <li>
-                  <Link to="/">．인기계정</Link>
-                </li>
-                <li>
-                  <Link to="/">．해시태그</Link>
-                </li>
-                <li>
-                  <Link to="/">．언어</Link>
-                </li>
+                {helpData.map((el) => {
+                  return (
+                    <li>
+                      <Link to={el.link}>{el.name}</Link>
+                    </li>
+                  );
+                })}
               </ul>
               <span>@ 2020 INSTAGRAM FROM FACEBOOK</span>
             </nav>

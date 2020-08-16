@@ -33,9 +33,11 @@ class Feeds extends React.Component {
   };
 
   handleClicked = () => {
-    if (!this.state.newText.trim("")) return;
+    const { commentList, newText } = this.state;
+
+    if (!newText.trim("")) return;
     this.setState({
-      commentList: this.state.commentList.concat(this.state.newText),
+      commentList: [...commentList, newText],
       newText: "",
     });
   };

@@ -69,6 +69,13 @@
 					flex-wrap: wrap;
 					margin-bottom: 16px;
 					color: $text-grey;
+
+					li {
+						a::after {
+							content: "·";
+							margin: 0 2.5px;
+						}
+					}
 				}
 
 				a,

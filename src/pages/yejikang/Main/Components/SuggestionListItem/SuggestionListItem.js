@@ -6,7 +6,7 @@ class SuggestionListItem extends React.Component {
   render() {
     const { id, image, comment } = this.props;
     return (
-      <div className="SuggestionListItem">
+      <li className="SuggestionListItem">
         <Link className="listPicture" to="/">
           <img alt={`${id}님의 프로필`} className="profileImg" src={image} />
         </Link>
@@ -19,7 +19,7 @@ class SuggestionListItem extends React.Component {
           </div>
         </div>
         <button>팔로우</button>
-      </div>
+      </li>
     );
   }
 }
