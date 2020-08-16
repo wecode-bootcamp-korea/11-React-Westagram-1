@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import "../../../../styles/common.scss";
 import "./Feed.scss";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
+library.add(fasHeart, farHeart);
 
 class Feed extends Component {
   constructor(props) {
@@ -16,6 +19,7 @@ class Feed extends Component {
       id: "daseulsongme",
       comment: "",
       commentList: [],
+      //객체를 저장한 배열에 접근한 것
     };
   }
 
@@ -66,10 +70,11 @@ class Feed extends Component {
             <div className="info__content">
               <ul className="icons">
                 <div className="icon-list__left">
-                  <li className="icon__list">
-                    <span className="icon__list--red">
-                      <FontAwesomeIcon icon={faHeart} />
-                    </span>
+                  <li className="icon__list--selected">
+                    <FontAwesomeIcon
+                      icon={fasHeart}
+                      style={{ color: "#ee4956" }}
+                    />
                   </li>
                   <li className="icon__list">
                     <FontAwesomeIcon icon={faComment} />
@@ -113,7 +118,7 @@ class Feed extends Component {
                   </span>
                 </div>
                 <span className="contentHeart">
-                  <FontAwesomeIcon icon={faHeart} />
+                  <FontAwesomeIcon icon={farHeart} />
                 </span>
               </div>
               <ul>
@@ -126,10 +131,11 @@ class Feed extends Component {
                         </span>
                         <span className="commentLi__content">
                           {commentTxt.comment}
+                          {/* 객체를 저장한 배열에 접근한 것 */}
                         </span>
                       </div>
                       <span className="commentLi__heart">
-                        <FontAwesomeIcon icon={faHeart} />
+                        <FontAwesomeIcon icon={farHeart} />
                       </span>
                     </li>
                   );
