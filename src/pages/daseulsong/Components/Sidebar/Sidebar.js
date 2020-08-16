@@ -8,7 +8,6 @@ class Sidebar extends Component {
     super(props);
 
     this.state = {
-      tagList: [],
       tagName: [
         "소개",
         "도움말",
@@ -22,6 +21,20 @@ class Sidebar extends Component {
         "해시태그",
         "언어",
       ],
+      // account: [{"배열이름": "배열값", "배열이름2": "배열값2", "배열이름3": "배열값3" }],
+      storyImgSrc: [
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/116471741_2451918528436071_3403925877115793886_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=ChLig_-k9rwAX9-3Jng&oh=ad469588fee992ce0159af40fb60691a&oe=5F4A8827",
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/43913375_249044715959605_1668311000236949504_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=pl_eGaftj4kAX-ad4us&oh=cca0f205830e88371f237b908294341e&oe=5F4C7626",
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/80319706_631139287713292_159190102378020864_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=m0iyU1DREJQAX9TYmri&oh=d52ec427e622493193e52ca79d9c4bac&oe=5F4C926D",
+      ],
+      storyAccountId: ["fishror23", "junghyunjoo", "khut0814"],
+      storyUploadTime: ["2시간 전", "1시간 전", "13분 전"],
+      recommendImgSrc: [
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/79372017_982952902089876_2421393426365808640_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=RgJSMmqD5FQAX_NwDEA&oh=6430af1753e8525e229eeadfee642cf8&oe=5F4B5AD2",
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/73407386_436742847280516_7688568694854647808_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=IZYaDgxMbOEAX-2BfiZ&oh=658e71a12ed01bf35d46a16fa2e2b217&oe=5F4C592C",
+        "https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/106037679_2848193468745887_5705878449882075021_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=ktJOHlgSWskAX-Y01ju&oh=1a28a1defdd31b8fa07b7a77affe3023&oe=5F4AF2FA",
+      ],
+      recommendAccountId: ["tjskdiw32", "trueman89", "smileday.wj"],
     };
   }
 
@@ -49,36 +62,25 @@ class Sidebar extends Component {
                   <span className="seeAll">모두 보기</span>
                 </div>
                 <ul className="account__list">
-                  <li className="account">
-                    <img
-                      alt="user-story"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/116471741_2451918528436071_3403925877115793886_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=ChLig_-k9rwAX9-3Jng&oh=ad469588fee992ce0159af40fb60691a&oe=5F4A8827"
-                    />
-                    <div className="account__info">
-                      <span className="account__id">fishror23</span>
-                      <span className="account__time">2시간 전</span>
-                    </div>
-                  </li>
-                  <li className="account">
-                    <img
-                      alt="user-story"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/43913375_249044715959605_1668311000236949504_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=pl_eGaftj4kAX-ad4us&oh=cca0f205830e88371f237b908294341e&oe=5F4C7626"
-                    />
-                    <div className="account__info">
-                      <span className="account__id">junghyunjoo</span>
-                      <span className="account__time">1시간 전</span>
-                    </div>
-                  </li>
-                  <li className="account">
-                    <img
-                      alt="user-story"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/80319706_631139287713292_159190102378020864_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=m0iyU1DREJQAX9TYmri&oh=d52ec427e622493193e52ca79d9c4bac&oe=5F4C926D"
-                    />
-                    <div className="account__info">
-                      <span className="account__id">khut0814</span>
-                      <span className="account__time">13분 전</span>
-                    </div>
-                  </li>
+                  {this.state.storyImgSrc.map((_src, index) => {
+                    const storyAccountId = this.state.storyAccountId[index];
+                    const storyUploadTime = this.state.storyUploadTime[index];
+                    return (
+                      <>
+                        <li className="account">
+                          <img alt="user-story" src={_src} />
+                          <div className="account__info">
+                            <span className="account__id">
+                              {storyAccountId}
+                            </span>
+                            <span className="account__time">
+                              {storyUploadTime}
+                            </span>
+                          </div>
+                        </li>
+                      </>
+                    );
+                  })}
                 </ul>
               </div>
             </li>
@@ -91,47 +93,26 @@ class Sidebar extends Component {
                   <span className="seeAll">모두 보기</span>
                 </div>
                 <ul className="account__list">
-                  <li className="account">
-                    <img
-                      alt="user-recommendation"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/79372017_982952902089876_2421393426365808640_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=RgJSMmqD5FQAX_NwDEA&oh=6430af1753e8525e229eeadfee642cf8&oe=5F4B5AD2"
-                    />
-
-                    <div className="account__info">
-                      <span className="account__id">tjskdiw32</span>
-                      <span className="account__follow">
-                        회원님을 팔로우합니다
-                      </span>
-                    </div>
-                    <span className="followBtn">팔로우</span>
-                  </li>
-                  <li className="account">
-                    <img
-                      alt="user-recommendation"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/73407386_436742847280516_7688568694854647808_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=IZYaDgxMbOEAX-2BfiZ&oh=658e71a12ed01bf35d46a16fa2e2b217&oe=5F4C592C"
-                    />
-                    <div className="account__info">
-                      <span className="account__id">trueman89</span>
-                      <span className="account__follow">
-                        회원님을 팔로우합니다
-                      </span>
-                    </div>
-                    <span className="followBtn">팔로우</span>
-                  </li>
-                  <li className="account">
-                    <img
-                      alt="user-recommendation"
-                      src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-19/s150x150/106037679_2848193468745887_5705878449882075021_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_ohc=ktJOHlgSWskAX-Y01ju&oh=1a28a1defdd31b8fa07b7a77affe3023&oe=5F4AF2FA"
-                    />
-
-                    <div className="account__info">
-                      <span className="account__id">smileday.wj</span>
-                      <span className="account__follow">
-                        회원님을 팔로우합니다
-                      </span>
-                    </div>
-                    <span className="followBtn">팔로우</span>
-                  </li>
+                  {this.state.recommendImgSrc.map((_src, index) => {
+                    const recommendAccountId = this.state.recommendAccountId[
+                      index
+                    ];
+                    return (
+                      <>
+                        <li className="account">
+                          <img alt="user-recommendation" src={_src} />
+                          <div className="account__info">
+                            <span className="account__id">
+                              {recommendAccountId}
+                            </span>
+                            <span className="account__follow">
+                              회원님을 팔로우합니다
+                            </span>
+                          </div>
+                        </li>
+                      </>
+                    );
+                  })}
                 </ul>
               </div>
             </li>
