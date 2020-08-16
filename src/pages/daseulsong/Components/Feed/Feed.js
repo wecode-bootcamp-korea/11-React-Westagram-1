@@ -32,6 +32,7 @@ class Feed extends Component {
       commentList: this.state.commentList.concat([
         { id: this.state.id, comment: this.state.comment },
       ]),
+      comment: "",
     });
   };
 
@@ -145,6 +146,7 @@ class Feed extends Component {
             <span className="uploadTime">54분 전</span>
             <section className="comment">
               <textarea
+                value={this.state.comment}
                 placeholder="댓글 달기..."
                 className="comment-box"
                 onChange={this.handleChangeInput}
