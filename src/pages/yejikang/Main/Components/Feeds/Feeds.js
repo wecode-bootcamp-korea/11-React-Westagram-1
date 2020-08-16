@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Storys from "../Storys/Storys";
 import Comment from "../Comment/Comment.js";
+import { getData } from "../../../RemoteDataSource";
 import "./Feeds.scss";
 
 class Feeds extends React.Component {
@@ -10,29 +11,26 @@ class Feeds extends React.Component {
 
     this.state = {
       commentList: [],
-      id: "yeji",
+      id: "yejiii_95",
       newText: "",
       isLike: false,
-      storyInfo: [
-        { id: "yeji", image: "images/yejikang/me.jpg" },
-        {
-          id: "dlwlrma",
-          image:
-            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/28434316_190831908314778_1954023563480530944_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=QYc1csYH1MYAX_zMZPy&oh=a8eddaad3129cb7726abe1625f8a95c3&oe=5F60DD30",
-        },
-        {
-          id: "realisshoman",
-          image:
-            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/11428302_1110990302261622_637418776_a.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=izFiAOP8M9oAX92zYHh&oh=d9856cecbc61ccfde5f521f593164f91&oe=5F60FA6C",
-        },
-        {
-          id: "yerin",
-          image:
-            "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/107568234_212276423313214_6993274077946280325_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_ohc=nokadWqNlr0AX9G9Wn4&oh=64b35329d43951c4aa27a034c96eda05&oe=5F608C6C",
-        },
-      ],
+      storyInfo: [],
     };
   }
+
+  componentDidMount = () => {
+    getData("MockStorysData.json", (res) => {
+      this.setState({
+        storyInfo: res.data,
+      });
+    });
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      newText: e.target.value,
+    });
+  };
 
   handleClicked = () => {
     if (!this.state.newText.trim("")) return;
@@ -46,12 +44,6 @@ class Feeds extends React.Component {
     if (e.keyCode === 13) {
       this.handleClicked();
     }
-  };
-
-  handleChange = (e) => {
-    this.setState({
-      newText: e.target.value,
-    });
   };
 
   handleLikeClick = () => {
@@ -121,11 +113,11 @@ class Feeds extends React.Component {
               <div className="heartInfoContainer">
                 <img
                   className="profileImg"
-                  alt="yejiiii_95의 프로필 사진"
-                  src="images/yejikang/me.jpg"
+                  alt="jiyee의 프로필 사진"
+                  src="https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/51570670_332158407508147_6003142247887384360_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=KPIZ-l-KoVYAX-QMWdX&oh=bf1843f0d18f8e72a5bfc89d7ed4f642&oe=5F62503A"
                 />
                 <div>
-                  <span>회원님 </span> 외 <span> 200명</span>이 좋아합니다.
+                  <span>jiyee님 </span> 외 <span> 200명</span>이 좋아합니다.
                 </div>
               </div>
               <div className="commentContainer">

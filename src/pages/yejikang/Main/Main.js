@@ -10,10 +10,10 @@ class Main extends React.Component {
     return (
       <div className="Main">
         <Nav />
-        <div className="Section">
+        <main className="mainContainer">
           <Feeds />
           <Aside />
-        </div>
+        </main>
       </div>
     );
   }

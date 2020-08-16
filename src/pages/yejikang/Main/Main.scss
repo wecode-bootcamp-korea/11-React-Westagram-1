@@ -1,7 +1,9 @@
 @import "../../../styles/common.scss";
 
-.Section {
-	display: flex;
-	justify-content: center;
-	background-color: $background-grey;
+.Main {
+	.mainContainer {
+		display: flex;
+		justify-content: center;
+		background-color: $background-grey;
+	}
 }
