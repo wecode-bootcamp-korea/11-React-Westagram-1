@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./Login.scss";
 
 class Login extends Component {
@@ -11,38 +11,35 @@ class Login extends Component {
     };
   }
 
-  confirmValAndGoToMain = (e) => {
+  login = (e) => {
     e.preventDefault();
     if (this.state.id === "wecode00@gmail.com" && this.state.pw === "777777") {
       this.props.history.push("/main-hwichan");
-      console.log("id : " + this.state.id, "/ pw : " + this.state.pw);
     } else {
       alert("입력하신 정보가 맞지 않습니다.");
     }
-    fetch("http://10.58.3.218:8000/user/signup", {
+    fetch("http://10.58.2.58:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw,
       }),
     })
-      .then((res) => res.json()) // json body => js
+      .then((res) => res.json())
       .then((res) => console.log(res));
   };
 
-  getValId = (e) => {
+  handleChange = (e) => {
     this.setState({
-      id: e.target.value,
-    });
-  };
-
-  getValPw = (e) => {
-    this.setState({
-      pw: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
   render() {
+    const {
+      handleChange,
+      state: { id, pw },
+    } = this;
     return (
       <div className="Login">
         <div className="loginContainer">
@@ -53,7 +50,8 @@ class Login extends Component {
                 className="write writeID"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
-                onChange={this.getValId}
+                onChange={handleChange}
+                name="id"
               />
             </div>
             <div className="userInfoArea userPwArea">
@@ -61,22 +59,23 @@ class Login extends Component {
                 className="write writePW"
                 type="password"
                 placeholder="비밀번호"
-                onChange={this.getValPw}
+                onChange={handleChange}
+                name="pw"
               />
             </div>
             <button
               className={
-                this.state.id.includes("@") && this.state.pw.length >= 5
+                id.includes("@") && pw.length >= 5
                   ? "buttonActive"
                   : "justButton"
               }
-              onClick={this.confirmValAndGoToMain}
+              onClick={this.login}
             >
               <div className="loginBtn">로그인</div>
             </button>
           </form>
           <div>
-            <a href="/">비밀번호를 잊으셨나요?</a>
+            <Link to="/">비밀번호를 잊으셨나요?</Link>
           </div>
         </div>
       </div>
