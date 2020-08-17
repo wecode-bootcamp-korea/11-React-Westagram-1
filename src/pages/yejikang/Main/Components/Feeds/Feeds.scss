@@ -29,6 +29,7 @@
 
 		.articleConatiner {
 			width: inherit;
+			margin-bottom: 60px;
 			border: 1px solid $border-grey;
 			background-color: $white;
 
@@ -80,7 +81,7 @@
 					position: relative;
 
 					.commentImg {
-						background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png)
+						background: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png")
 							center no-repeat;
 					}
 
@@ -96,7 +97,7 @@
 					}
 
 					.heart {
-						background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png)
+						background: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png")
 							center no-repeat;
 					}
 
@@ -168,7 +169,6 @@
 				display: flex;
 				align-items: center;
 				padding: 0 9px;
-				margin-top: 4px;
 				border-top: 1px solid $border-grey;
 
 				.commentForm {

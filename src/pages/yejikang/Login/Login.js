@@ -28,7 +28,6 @@ class Login extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => sessionStorage.setItem("access_token", res.access_token));
-    // .then((res) => console.log(res)); //회원가입
   };
 
   goToMain = () => {

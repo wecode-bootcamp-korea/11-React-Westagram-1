@@ -29,37 +29,31 @@
 			}
 		}
 
-		.navSearch {
+		input {
 			width: 215px;
 			height: 28px;
-			input {
-				width: inherit;
-				height: inherit;
-				text-align: start;
-				padding-left: 12px;
-				border: 1px solid $border-grey;
-				border-radius: 2px;
-				background-color: $background-grey;
-				&::placeholder {
-					text-align: center;
-				}
+			text-align: start;
+			padding-left: 12px;
+			border: 1px solid $border-grey;
+			border-radius: 2px;
+			background-color: $background-grey;
+			&::placeholder {
+				text-align: center;
 			}
 		}
 
-		.navIconList {
+		ul {
 			width: 198px;
 			height: 22px;
-			ul {
-				@include centerSpaceBetween;
-				li {
+			@include centerSpaceBetween;
+			li {
+				height: 22px;
+				img {
+					width: 22px;
 					height: 22px;
-					img {
-						width: 22px;
-						height: 22px;
-					}
-					.profileImg {
-						border-radius: 50%;
-					}
+				}
+				.profileImg {
+					border-radius: 50%;
 				}
 			}
 		}
