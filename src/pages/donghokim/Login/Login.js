@@ -7,6 +7,15 @@ import "./Login.scss";
 
 const ipAddress = "http://10.58.3.254:8000";
 
+const validate = (() => {
+  const config = {
+    username: validation.min(5).contains("@").done(),
+    password: validation.min(5).done(),
+  };
+
+  return (properties) => validation.validate(config, properties);
+})();
+
 class Login extends React.Component {
   state = {
     username: "",
@@ -20,10 +29,10 @@ class Login extends React.Component {
 
   changeButtonStatus = () => {
     this.setState({
-      buttonStatus: !isIdHasAtAndPasswordMinFive(
-        this.state.username,
-        this.state.password
-      ),
+      buttonStatus: !validate({
+        username: this.state.username,
+        password: this.state.password,
+      }),
     });
   };
 
