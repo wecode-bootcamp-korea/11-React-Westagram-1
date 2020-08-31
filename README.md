@@ -1,16 +1,54 @@
-# 11-React-Westagram-1
+# westagram!
 
-## 팀원
+-----------
 
-### 11기 강예지
+> React로 만든 인스타그램 클론 코딩 프로젝트
 
-### 11기 김동호
+## 🖥  프로젝트 
 
-### 11기 송다슬
+![로그인이미지](https://media.giphy.com/media/XZrrnWofNbQzj3ygNc/giphy.gif)
 
-### 11기 유휘찬
+![메인페이지](https://media.giphy.com/media/eKJF5Ekz1xZZ05wK9p/giphy.gif)
 
-## Process For Co-Work
+- **주제**: React를 사용한 Instagram clone
+
+  - CRA를 사용한 초기 세팅
+  - 4명의 팀원들이 공동 component, scss 사용 및 관리
+  - git을 사용한 첫 번째 협업
+
+- 📅 **프로젝트 기간** 
+
+  ​	2020.08.06 - 2020.08.16 
+
+  
+
+## 👨‍💻 팀 원 별 작업 현황
+
+- **공통**
+  - 로그인 페이지 레이아웃
+  - id, pw 입력 시 로그인 버튼 활성화 기능
+  - 메인 페이지 레이아웃
+  - 댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능
+  - 문자 입력 시 게시 버튼 활성화 기능
+
+- **강예지** 
+  - 메인 페이지 피드 좋아요 버튼 기능
+- **김동호**
+  - 메인 페이지 media query를 사용한 element 사라짐 기능
+- **송다슬**
+  - 메인 페이지 media query를 사용한 element 사라짐 기능
+- **유휘찬**
+  - 메인 페이지 media query를 사용한 element 사라짐 기능
+  - 메인 페이지 피드 좋아요 숫자 증가 기능
+
+## 🔧  기술 스택
+
+- HTML,CSS
+- JavaScript(ES6+)
+- React
+- SCSS
+
+## ✏️ 작업 순서 (git) 
 
 1. 초기 세팅된 git repository clone하기
 
@@ -52,16 +90,9 @@
 
 10. 다시 3번부터 무한 반복...
 
-## 작업 시 주의 사항
+## 📕 팀원별 프로젝트 후기
 
-1. <i><b>자기 브랜치에서만 작업하기</b></i>
-
-2. <i><b>add 전에 master 브랜치 업데이트 여부 확인</b></i>
-
-3. <i><b>커밋 메세지 가이드라인 지키기</b></i>
-
-`git commit -m "[자기 이름] ADD : 적용된 내용"`
-
-[참고) Commit Message Guidelines](https://www.notion.so/Commit-Message-Guidelines-8ca8fac8178943e78ddcfb48f47ba973)
-
-4. <i><b>push 할 때 feature 브랜치에서 push하는 건지 확인하기</b></i>
+- 강예지 : [예지님 블로그](https://velog.io/@yejikang/westagram-인스타그램-클론코딩-후기)
+- 김동호: [동호님 블로그](http://psy082.github.io/)
+- 송다슬: [다슬님 블로그](http://aleatorik.github.io/)
+- 유휘찬: [휘찬님 블로그](https://velog.io/@dbgnlcks34/Instagram-clone-miniproject-Westagram)
