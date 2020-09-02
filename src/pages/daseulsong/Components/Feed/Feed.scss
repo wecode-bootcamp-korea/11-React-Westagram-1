@@ -1,0 +1,168 @@
+@import "../../Main/Main.scss";
+
+.feeds {
+  width: 472px;
+  height: 745px;
+  margin-top: 46px;
+  margin-right: 38px;
+  max-width: 600px;
+  background-color: $background-grey;
+  border: 1px solid $border-grey;
+  @media only screen and (max-width: 500px) {
+    margin-left: 12px;
+  }
+}
+
+.account {
+  display: flex;
+  .account__info {
+    display: flex;
+    flex: 1 1 60%;
+    flex-direction: column;
+    margin-left: 18px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+
+.author img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.account__container {
+  @include startSpaceBetween;
+  margin: 15px;
+  .account {
+    margin-top: 7px;
+  }
+}
+
+.mainImg-container,
+.mainimg-container__img {
+  position: relative;
+  width: 470px;
+  height: 398px;
+  vertical-align: top;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info__content {
+  margin-left: 15px;
+  margin-bottom: 11px;
+  .icons {
+    @include startSpaceBetween;
+    .icon-list__left {
+      @include startSpaceBetween;
+      font-size: 23px;
+      margin-top: 13px;
+      margin-left: -4px;
+      li {
+        margin-right: 12px;
+        padding: 3px;
+      }
+    }
+    .icon__list--right {
+      font-size: 23px;
+      margin: 13px;
+      padding: 3px;
+    }
+  }
+}
+
+.info__like {
+  margin-bottom: 8px;
+  img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  span {
+    margin-left: 5px;
+  }
+}
+
+.metadata {
+  display: flex;
+  .metadata__userName {
+    font-weight: 600;
+  }
+  li {
+    margin-right: 8px;
+  }
+  .metadata__content--selected {
+  }
+  .seeMore {
+    color: $dot-grey;
+  }
+}
+
+.divide-line {
+  margin-bottom: 8px;
+}
+
+.uploadTime {
+  font-weight: lighter;
+  font-size: 14px;
+  color: $dot-grey;
+  margin-left: 15px;
+}
+
+/* comment part */
+.comment__container::-webkit-scrollbar {
+  display: none;
+}
+
+.comment__container {
+  overflow-y: scroll;
+  height: 50px;
+  margin-left: 15px;
+  .infoComment,
+  .commentLi {
+    @include startSpaceBetween;
+    margin-bottom: 10px;
+    .contentHeart,
+    .commentLi__heart {
+      font-size: 16px;
+      margin-right: 13px;
+    }
+  }
+  .contentLeft,
+  .commentLi__left {
+    display: flex;
+    .contentId,
+    .commentLi__userName {
+      margin-right: 8px;
+      font-weight: 600;
+    }
+  }
+}
+
+.comment {
+  @include startSpaceBetween;
+  margin-top: 20px;
+  border-top: 1px solid $border-grey;
+  vertical-align: top;
+  vertical-align: bottom;
+  .comment-box {
+    width: 420px;
+    padding: 15px 0px 0px 15px;
+    background-color: $background-grey;
+    border: none;
+    resize: none;
+  }
+  .postBtn {
+    color: $blue;
+    padding: 15px 15px 0px 0px;
+  }
+}

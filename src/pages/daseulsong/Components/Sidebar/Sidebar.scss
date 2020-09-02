@@ -1,0 +1,105 @@
+@import "../../Main/Main.scss";
+
+.main__right {
+  width: 296px;
+  margin-top: 46px;
+  display: block;
+  ul li {
+    margin-top: 12px;
+  }
+  .story,
+  .recommend {
+    border: 1px solid $border-grey;
+  }
+  .author {
+    display: flex;
+    margin-left: 10px;
+    .account {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
+}
+
+.account .account__id {
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.account .account__name {
+  font-weight: lighter;
+  color: $text-grey;
+}
+
+.account .account__location {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+//  dividing line
+
+.account__follow,
+.account__time {
+  font-size: 14px;
+  color: $text-grey;
+}
+
+.story__title,
+.recommend__title {
+  font-size: 16px;
+  @include startSpaceBetween;
+  margin: 12px;
+  .story__title--grey,
+  .recommend__title--grey {
+    color: $text-grey;
+    margin-top: -1px;
+    font-weight: 600;
+  }
+}
+
+.seeAll {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account__list .account {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.account__list li {
+  margin-right: 12px;
+}
+
+.followBtn {
+  color: $blue;
+  margin-top: 8px;
+}
+
+.description {
+  width: 276px;
+  font-size: 13.5px;
+  font-weight: lighter;
+  margin-left: 11px;
+  .description__tag {
+    font-size: smaller;
+    margin-bottom: 8px;
+  }
+  .rights {
+    font-size: smaller;
+    font-weight: 400;
+    margin-top: 20px;
+    color: $text-grey;
+  }
+}
+
+.description__tag li span {
+  margin: 0px 3px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .main__right {
+    display: none;
+  }
+}

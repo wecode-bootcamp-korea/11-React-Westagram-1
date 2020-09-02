@@ -1,0 +1,101 @@
+@import "../../Main/Main.scss";
+
+nav {
+  width: 100%;
+  background-color: $white;
+}
+
+.nav__container {
+  @include startSpaceBetween;
+  max-width: 945px;
+  margin: 0 auto;
+  position: relative;
+  top: 5px;
+}
+
+.logo {
+  display: flex;
+  margin-left: 72px;
+  font-size: 28px;
+  @media only screen and (max-width: 500px) {
+    margin-left: 21px;
+  }
+  li {
+    margin-right: 10px;
+  }
+  img {
+    width: 104px;
+    height: 50px;
+  }
+}
+
+.search {
+  position: relative;
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
+  .search__bar {
+    text-align: center;
+    padding: 8px 42px;
+    margin-top: 8px;
+  }
+  .search__glass {
+    position: absolute;
+    top: 16px;
+    right: 129px;
+    color: $text-grey;
+  }
+}
+
+ul {
+  .icons {
+    font-size: 28px;
+  }
+}
+
+nav {
+  .icons {
+    display: flex;
+    margin-right: 58px;
+    @media only screen and (max-width: 500px) {
+      margin-right: 0px;
+    }
+  }
+  .icons__list {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+nav .icons li {
+  margin-right: 20px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.icon__list--account img {
+  border-radius: 50%;
+}
+
+.icons__list .selected {
+  border-style: none;
+  background-color: $white;
+  position: relative;
+  bottom: 14px;
+}
+
+.icons__count {
+  font-weight: lighter;
+  background-color: #ee4956;
+  color: $white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  line-height: 24px;
+  display: inline-block;
+  position: absolute;
+  top: -2px;
+  right: -4px;
+}
