@@ -1,0 +1,28 @@
+.Comment {
+	display: flex;
+	position: relative;
+	margin-bottom: 4px;
+
+	.id {
+		font-weight: 600;
+		margin-right: 8px;
+	}
+
+	.heart {
+		background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png) center
+			no-repeat;
+	}
+
+	.fillheart {
+		background: url("/images/yejikang/fillheart.png") center no-repeat;
+	}
+
+	.heartBtn {
+		width: 14px;
+		height: 14px;
+		background-size: contain;
+		background-color: inherit;
+		position: absolute;
+		right: 0;
+	}
+}

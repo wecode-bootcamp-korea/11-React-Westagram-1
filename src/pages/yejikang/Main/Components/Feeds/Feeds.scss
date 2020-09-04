@@ -1,0 +1,193 @@
+@import "../../../../../styles/common.scss";
+
+.Feeds {
+	display: flex;
+	justify-content: center;
+	margin-top: 54px;
+
+	.feedSection {
+		width: 614px;
+		height: 100%;
+		margin-right: 28px;
+		padding-top: 30px;
+
+		.storyContainer {
+			height: 118px;
+			margin-bottom: 24px;
+			padding: 19px 0px;
+			border: 1px solid $border-grey;
+			background-color: $white;
+
+			ul {
+				display: flex;
+				overflow: scroll;
+				&::-webkit-scrollbar {
+					display: none;
+				}
+			}
+		}
+
+		.articleConatiner {
+			width: inherit;
+			margin-bottom: 60px;
+			border: 1px solid $border-grey;
+			background-color: $white;
+
+			.articleTop {
+				@include centerSpaceBetween;
+				height: 60px;
+				padding: 16px;
+
+				.profilePicture {
+					height: 32px;
+
+					img {
+						width: 32px;
+						border-radius: 50%;
+					}
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					width: 496px;
+					a {
+						width: fit-content;
+						font-weight: 600;
+						color: black;
+					}
+				}
+
+				.threeDots {
+					width: 40px;
+					height: 40px;
+					background: url(https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png)
+						center no-repeat;
+					background-size: 24px;
+				}
+			}
+
+			.articlePictures {
+				height: 614px;
+				background: url("/images/yejikang/picture.jpg") center no-repeat;
+				background-size: cover;
+				background-size: contain;
+			}
+
+			.articleBottom {
+				.articleIconContainer {
+					height: 40px;
+					display: flex;
+					position: relative;
+
+					.commentImg {
+						background: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png")
+							center no-repeat;
+					}
+
+					.share {
+						@include center;
+					}
+
+					.bookmarkImg {
+						position: absolute;
+						right: 16px;
+						background: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png")
+							center no-repeat;
+					}
+
+					.heart {
+						background: url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png")
+							center no-repeat;
+					}
+
+					.fillheart {
+						background: url("/images/yejikang/fillheart.png") center no-repeat;
+					}
+
+					.articleBtn {
+						width: 40px;
+						height: 100%;
+						background-size: 24px;
+						background-color: inherit;
+					}
+				}
+
+				.heartInfoContainer {
+					height: 20px;
+					display: flex;
+					align-items: center;
+					padding: 0 9px;
+					margin-bottom: 8px;
+
+					.profileImg {
+						width: 20px;
+						height: 20px;
+						margin-right: 5px;
+						border-radius: 50%;
+					}
+
+					span {
+						font-weight: 600;
+					}
+				}
+
+				.commentContainer {
+					padding: 0 9px;
+					margin-bottom: 4px;
+
+					.commentItem {
+						display: flex;
+						position: relative;
+						margin-bottom: 4px;
+
+						.commentId {
+							font-weight: 600;
+							margin-right: 8px;
+						}
+						.commentHeartBtn {
+							width: 14px;
+							height: 14px;
+							background-size: contain;
+							background-color: inherit;
+							position: absolute;
+							right: 0;
+						}
+					}
+				}
+			}
+
+			.articleTimeInfo {
+				margin-bottom: 4px;
+				padding: 0 9px;
+				font-size: 10px;
+				color: $text-grey;
+			}
+
+			.addCommentContainer {
+				height: 56px;
+				display: flex;
+				align-items: center;
+				padding: 0 9px;
+				border-top: 1px solid $border-grey;
+
+				.commentForm {
+					.inputComment {
+						width: 557.77px;
+						height: 18px;
+					}
+					button {
+						background-color: inherit;
+						color: $blue;
+						font-weight: 600;
+
+						&:disabled {
+							opacity: 0.7;
+							pointer-events: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

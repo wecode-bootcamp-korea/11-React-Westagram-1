@@ -1,0 +1,61 @@
+@import "../../styles/common.scss";
+
+@mixin center-fixed {
+	display: flex;
+	justify-content: center;
+	position: fixed;
+}
+
+.Nav {
+	@include center-fixed;
+	width: 100%;
+	height: 54px;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	background-color: $white;
+	border-bottom: 1px solid $border-grey;
+
+	nav {
+		@include centerSpaceBetween;
+		width: 935px;
+		.navLogo {
+			height: 29px;
+			display: flex;
+			align-items: center;
+			img {
+				width: 103px;
+				height: 29px;
+			}
+		}
+
+		input {
+			width: 215px;
+			height: 28px;
+			text-align: start;
+			padding-left: 12px;
+			border: 1px solid $border-grey;
+			border-radius: 2px;
+			background-color: $background-grey;
+			&::placeholder {
+				text-align: center;
+			}
+		}
+
+		ul {
+			width: 198px;
+			height: 22px;
+			@include centerSpaceBetween;
+			li {
+				height: 22px;
+				img {
+					width: 22px;
+					height: 22px;
+				}
+				.profileImg {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}

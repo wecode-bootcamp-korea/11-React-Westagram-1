@@ -5,25 +5,28 @@ $border-grey: rgb(219, 219, 219);
 $dot-grey: rgb(168, 168, 168);
 $text-grey: rgb(142, 142, 142);
 
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin startSpaceBetween {
-  display: flex;
-  justify-content: space-between;
-}
-
-@mixin centerSpaceBetween {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+* {
+	box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin startSpaceBetween {
+	display: flex;
+	justify-content: space-between;
+}
+
+@mixin centerSpaceBetween {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

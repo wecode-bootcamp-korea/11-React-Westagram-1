@@ -1,0 +1,38 @@
+@import "../../../../../styles/common.scss";
+
+.Storys {
+	@include center;
+	flex-direction: column;
+	width: 80px;
+	height: 80px;
+
+	.storyCircle {
+		@include center;
+		width: 60px;
+		height: 60px;
+		margin-bottom: 2px;
+		border-radius: 50%;
+		background: linear-gradient(
+			45deg,
+			#f09433 0%,
+			#e6683c 25%,
+			#dc2743 50%,
+			#cc2366 75%,
+			#bc1888 100%
+		);
+
+		.profileImg {
+			width: 56px;
+			height: 56px;
+			border: 2px solid white;
+			border-radius: 50%;
+		}
+	}
+	.storyId {
+		width: inherit;
+		text-align: center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 12px;
+	}
+}
