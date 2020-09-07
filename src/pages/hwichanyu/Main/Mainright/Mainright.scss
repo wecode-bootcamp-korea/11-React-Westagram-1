@@ -1,0 +1,179 @@
+@import "../../../../styles/common.scss";
+
+.MainRight {
+  width: 293px;
+  height: 100%;
+
+  .myInfo {
+    width: 100%;
+    height: 56px;
+    margin-top: 23px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    display: flex;
+
+    .myPicture {
+      width: 56px;
+      height: 56px;
+    }
+
+    .myPicture img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.profileLine {
+  width: 66px;
+  height: 100%;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .userEngName {
+    text-decoration: none;
+    color: rgba(38, 38, 38, 1);
+    font-weight: 600;
+  }
+
+  .userKorName {
+    color: $text-grey;
+    font-size: 12px;
+  }
+}
+
+.recommend {
+  width: 100%;
+  height: 291px;
+
+  .forUserRecommend {
+    padding-top: 4px;
+    padding-bottom: 8px;
+    margin-top: 22px;
+    @include startSpaceBetween;
+
+    .forUserRecoText {
+      font-size: 14px;
+      font-weight: 600;
+      color: $text-grey;
+    }
+
+    .seeAllText {
+      color: rgba(38, 38, 38, 1);
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .recoList {
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+
+    .eachRecolist {
+      display: flex;
+
+      .listImg {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid rgba(169, 169, 169, 0.2);
+      }
+
+      .recoS {
+        display: flex;
+
+        .recos {
+          width: 205px;
+          height: 28px;
+          margin-left: 15px;
+
+          .recoName {
+            height: 50%;
+            font-weight: 600;
+            font-size: 14px;
+          }
+
+          .otherUserStatus {
+            height: 50%;
+            font-size: 12px;
+            margin-top: 4px;
+            color: $text-grey;
+          }
+        }
+
+        .followBtn {
+          display: flex;
+          align-items: center;
+          height: 95%;
+          margin-left: 10px;
+          color: $blue;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  width: 100%;
+}
+
+.about ul {
+  display: flex;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(199, 199, 199, 1);
+
+  li::after {
+    content: "·";
+    margin: 0 2.5px;
+  }
+
+  .lastAboutLi::after {
+    content: none;
+  }
+}
+
+.about span {
+  width: 8px;
+  text-align: center;
+}
+
+.about .version {
+  margin-top: 17px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainRight {
+    display: none;
+  }
+
+  .mainFrame {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .mainFrame {
+    width: 700px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .feedsTop {
+    display: none;
+  }
+}

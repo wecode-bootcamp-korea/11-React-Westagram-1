@@ -1,0 +1,269 @@
+@import "../../../../styles/reset.scss";
+@import "../../../../styles/common.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  height: 200vh;
+  background: $background-grey;
+}
+
+section {
+  width: 935px;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.Feeds {
+  width: 614px;
+  height: 100%;
+  margin-right: 28px;
+
+  .feedsTop {
+    width: 100%;
+    height: 118px;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    border: 1px solid $border-grey;
+    border-radius: 3px;
+    background: $white;
+
+    .feedsTop li {
+      display: inline-block;
+    }
+
+    .feedsTopImgLine {
+      width: 66px;
+      height: 66px;
+      cursor: pointer;
+      position: relative;
+      border: 2px solid darkorange;
+      border-radius: 50%;
+
+      .feedsTopImgName {
+        top: 68px;
+        position: relative;
+        font-size: 12px;
+        color: $text-grey;
+      }
+    }
+    .feedsTopImgLine img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+    }
+  }
+
+  .feedsTop ul {
+    list-style: none;
+    padding-left: 18px;
+    margin: 0;
+  }
+}
+
+.feed {
+  border: 1px solid $border-grey;
+  background-color: $white;
+  border-radius: 3px;
+
+  .feedLabel {
+    height: 60px;
+    padding: 16px;
+    display: flex;
+    position: relative;
+
+    .feedWriterIcon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .publish {
+      width: 100%;
+      display: flex;
+      margin-left: 14px;
+
+      .publisherId {
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      .publisher {
+        font-size: 12px;
+        margin-top: 2px;
+      }
+
+      .rightDotBtn {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 16px;
+      }
+    }
+
+    .dotBtn {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.feedview {
+  width: 612px;
+  height: 612px;
+}
+
+.feedview img {
+  width: 100%;
+  height: 100%;
+}
+
+.feedBtns {
+  width: 100%;
+  padding: 0 16px;
+  margin-top: 1px;
+  @include startSpaceBetween;
+
+  .feedLikeSpace {
+    height: 40px;
+  }
+}
+
+.feedBtns img {
+  width: 24px;
+  height: 24px;
+  margin: 8px;
+}
+
+#feedheart {
+  margin-left: 0;
+}
+
+#feedBookmark {
+  margin-right: 0;
+}
+
+.feedLike {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+
+  .feedLike span {
+    padding-left: 3px;
+  }
+}
+
+.communication {
+  margin: 0 16px;
+
+  .communication span {
+    font-size: 14px;
+  }
+
+  .communication .seeMore {
+    color: $text-grey;
+  }
+
+  .userStory {
+    margin-bottom: 4px;
+
+    a {
+      margin-right: 5px;
+    }
+  }
+}
+
+.communication a {
+  text-decoration: none;
+  color: rgb(38, 38, 38);
+  font-weight: 600;
+}
+
+.feed ul {
+  list-style: none;
+  padding: 0 0 0 16px;
+  margin: 0;
+}
+
+.commentList div {
+  display: inline;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(38, 38, 38, 1);
+  margin-right: 5px;
+
+  .commentList span {
+    font-size: 14px;
+  }
+}
+.day {
+  font-size: 10px;
+  color: $text-grey;
+  padding-left: 16px;
+}
+
+.addComment {
+  width: 100%;
+  height: 55px;
+  padding: 0 16px;
+  margin-top: 8px;
+  border-top: 1px solid rgb(239, 239, 239);
+
+  .inputComment {
+    width: 100%;
+    @include centerSpaceBetween;
+
+    input:focus {
+      outline: none;
+    }
+  }
+}
+
+.submit {
+  border: 0;
+  outline: 0;
+  background-color: $white;
+  color: $blue;
+  opacity: 0.3;
+  padding: 0;
+}
+
+.submitActive {
+  border: 0;
+  outline: 0;
+  background-color: $white;
+  color: $blue;
+  padding: 0;
+}
+
+.inputComment input {
+  height: 18px;
+  width: 530px;
+  border: none;
+  padding: 0;
+  background-color: $white;
+
+  .inputComment input::placeholder {
+    text-align: left;
+  }
+}
